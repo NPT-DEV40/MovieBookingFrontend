@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable, map } from 'rxjs';
 import { user } from 'src/app/features/users/interfaces/user';
 import { UserService } from 'src/app/features/users/services/user.service';
 import { environment } from 'src/environments/environment';
+import { registerRequest } from '../interfaces/registerRequest';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -45,14 +46,10 @@ export class AuthService {
       });
   }
 
-  register(firstName: string, lastName: string, username: string, email: string, password: string): Observable<any> {
+  register(registerRequest: registerRequest): Observable<any> {
     return this.http.post(environment.api + 'auth/register',
       {
-        firstName,
-        lastName,
-        username,
-        email,
-        password
+
       }, httpOptions);
   }
 
