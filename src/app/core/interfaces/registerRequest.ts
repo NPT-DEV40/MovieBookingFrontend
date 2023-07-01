@@ -1,8 +1,10 @@
-export class registerRequest {
-    firstName?: String;
-    lastName?: String;
-    username?: String;
-    email?: String;
-    password?: String;
-    confirmPassword?: String;
+import { FormControl } from "@angular/forms";
+
+export interface registerRequest {
+    firstName?: FormControl<string>;
+    lastName?: FormControl<string>;
+    email?: FormControl<string>;
+    userName?: FormControl<string>;
+    password?: FormControl<string>;
+    confirmPassword?: FormControl<string>;
 }

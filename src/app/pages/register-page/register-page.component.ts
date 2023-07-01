@@ -13,7 +13,7 @@ import { AlertService } from 'src/app/features/alert/services/alert.service';
   styleUrls: ['./register-page.component.css']
 })
 export class RegisterPageComponent implements OnInit {
-  form!: FormGroup;
+  form!: FormGroup<registerRequest>;
   loading = false;
   submitted = false;
 
@@ -28,14 +28,14 @@ export class RegisterPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      userName: ['', Validators.required],
-      password: ['', Validators.required, Validators.minLength(6), this.customvalidation.patternValidator()],
-      confirmPassword: ['', Validators.required, Validators.minLength(6)]
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      userName: new FormControl('', Validators.required),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)])
     }, {
-      validators: this.customvalidation.MatchPassword('password', 'confirmPassword')
+      validators: [this.customvalidation.MatchPassword('password', 'confirmPassword')]
     });
   }
 
@@ -50,19 +50,25 @@ export class RegisterPageComponent implements OnInit {
 
     if(this.form.invalid) {
       return;
+    } else {
+      console.log(this.form.value);
     }
 
     this.loading = true;
 
-    this.auth.register(this.form.value as registerRequest)
-    .pipe(first()).subscribe({
+    this.auth.register(this.form.value as registerRequest).pipe(first()).subscribe({
       next: () => {
+        console.log("Register Successfully");
         this.alert.success("Register Successfully", {keepAfterRouteChange: true});
         this.router.navigate(['../login'], {relativeTo: this.route})
       },
-      error: () => {
+      error: (e) => {
+        console.log(e);
         this.alert.error("Register Failed");
         this.loading = false;
+      },
+      complete: () => {
+        console.log("Register Completed");
       }
     });
   }

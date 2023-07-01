@@ -8,22 +8,26 @@ import { environment } from 'src/environments/environment';
 import { registerRequest } from '../interfaces/registerRequest';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  withCredentials: true
 }
+
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   private userSubject: BehaviorSubject<user | null>;
   public user: Observable<user | null>;
 
-  userService!: UserService;
 
   constructor(
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private userService: UserService
   ) {
     this.userSubject = new BehaviorSubject<user | null>(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null);
     this.user = this.userSubject.asObservable(); // Convert BehaviorSubject to Observable, so that it can be subscribed but not have permission to change value
@@ -38,18 +42,23 @@ export class AuthService {
       {
         username,
         password
-      }, httpOptions).subscribe((response: any) => {
-        const token = response.headers.get('nptCookie');
-        sessionStorage.setItem('token', token);
-        this.userService.saveUser(response.body);
-        this.userSubject.next(response.body);
-      });
+      }, httpOptions).pipe(map((response: any) => {
+        console.log(response);
+        sessionStorage.setItem('token', response["token"]);
+        this.userService.saveUser(response);
+        this.userSubject.next(response);
+      }));
   }
 
   register(registerRequest: registerRequest): Observable<any> {
     return this.http.post(environment.api + 'auth/register',
       {
-
+        firstName: registerRequest.firstName,
+        lastName: registerRequest.lastName,
+        userName: registerRequest.userName,
+        email: registerRequest.email,
+        password: registerRequest.password,
+        confirmPassword: registerRequest.confirmPassword
       }, httpOptions);
   }
 

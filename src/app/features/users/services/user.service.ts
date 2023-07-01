@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
   constructor() { }
 
-  saveUser(response:any) {
+  saveUser(response:any): void {
     localStorage.setItem('user', JSON.stringify(response));
   }
 
