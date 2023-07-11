@@ -43,6 +43,17 @@ export class AuthService {
         username,
         password
       }, httpOptions).pipe(map((response: any) => {
+        sessionStorage.setItem('token', response["token"]);
+        console.log("token: " + sessionStorage.getItem('token'));
+        this.userService.saveUser(response);
+        this.userSubject.next(response);
+      }));
+  }
+
+  LoginWithGoogle(credentialResponse: any) {
+    return this.http.post(environment.api + 'auth/login/google',
+      JSON.stringify(credentialResponse),
+      httpOptions).pipe(map((response: any) => {
         console.log(response);
         sessionStorage.setItem('token', response["token"]);
         this.userService.saveUser(response);

@@ -2,10 +2,10 @@
     <h4>Login</h4>
     <div class="card-header">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
             <div class="mb-3">
                 <label class="form-label">User Name</label>
-                <input type="text" class="form-control" formControlName="userName" [ngClass] = "{'is-invalid': submitted && f['userName'].errors}">
+                <input type="text" class="form-control" formControlName="userName"
+                    [ngClass]="{'is-invalid': submitted && f['userName'].errors}">
                 <div *ngIf="(f['userName'].touched|| submitted) && f['userName'].errors" class="invalid-feedback">
                     <div *ngIf="f['userName'].errors?.['required']">User Name is required</div>
                 </div>
@@ -13,13 +13,23 @@
 
             <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="password" class="form-control" formControlName="password" [ngClass] = "{'is-invalid' : submitted && f['password'].errors}">
+                <input type="password" class="form-control" formControlName="password"
+                    [ngClass]="{'is-invalid' : submitted && f['password'].errors}">
                 <div *ngIf="(f['password'].touched || submitted) && f['password'].errors" class="invalid-feedback">
                     <div *ngIf="f['password'].errors?.['required']">Password is required</div>
                 </div>
             </div>
-            
+
             <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+        </form> 
+
+        <!-- <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID"
+            data-login_uri="https://your.domain/your_login_endpoint" data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+            data-shape="rectangular" data-logo_alignment="left">
+        </div> -->
+
+        <div id="googleButton" (click)="loginWithGoogle"></div>
     </div>
 </div>

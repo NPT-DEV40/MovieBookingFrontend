@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginPageRoutingModule } from './login-page-routing.module';
 import { LoginPageComponent } from './login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/materials/material.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     LoginPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class LoginPageModule { }
