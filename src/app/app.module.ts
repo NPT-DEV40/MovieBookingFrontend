@@ -9,11 +9,12 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MaterialModule } from './materials/material.module';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { environment } from 'src/environments/environment.development';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +25,26 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     MaterialModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(environment.googleId)
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(environment.facebookId)
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })

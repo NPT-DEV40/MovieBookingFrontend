@@ -61,6 +61,10 @@ export class AuthService {
       }));
   }
 
+  LoginWithFacebook(credentialResponse: any) {
+    
+  }
+
   register(registerRequest: registerRequest): Observable<any> {
     return this.http.post(environment.api + 'auth/register',
       {
