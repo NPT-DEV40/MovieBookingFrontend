@@ -6,21 +6,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MaterialModule } from './materials/material.module';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
-import { HeaderComponent } from './features/header/header.component';
-import { FooterComponent } from './features/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-    HeaderComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
