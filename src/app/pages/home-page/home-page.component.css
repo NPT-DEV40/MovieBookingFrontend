@@ -10,8 +10,10 @@
     display: flex;
     align-items: center;
     padding-top: 80px;
-    background-color: transparent;
+    background-color: white;
     justify-content: center;
+    height: 1000px;
+    margin-bottom: 180px;
 }
 
 .home__wrapper{
