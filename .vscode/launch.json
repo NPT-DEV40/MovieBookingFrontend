@@ -15,7 +15,7 @@
       "name": "Launch Chrome",
       "request": "launch",
       "type": "chrome",
-      "url": "https://localhost:4200/",
+      "url": "http://localhost:4200/",
       "webRoot": "${workspaceFolder}"
     },
 
@@ -24,14 +24,14 @@
       "type": "msedge",
       "request": "launch",
       "preLaunchTask": "npm: start",
-      "url": "https://localhost:4200/"
+      "url": "http://localhost:4200/"
     },
     {
       "name": "ng test",
       "type": "msedge",
       "request": "launch",
       "preLaunchTask": "npm: test",
-      "url": "https://localhost:9876/debug.html"
+      "url": "http://localhost:9876/debug.html"
     }
   ]
 }

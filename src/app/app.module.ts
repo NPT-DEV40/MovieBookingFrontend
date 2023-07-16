@@ -11,10 +11,15 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ChatComponent } from './features/chat/chat.component';
+
+const config: SocketIoConfig = { url: 'ws://localhost:8080/websocket', options: {} };
 
 @NgModule({
   declarations: [
     AppComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     MaterialModule,
     FontAwesomeModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
@@ -36,10 +42,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(environment.googleId)
           },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider(environment.facebookId)
-          }
         ],
         onError: (err) => {
           console.error(err);
