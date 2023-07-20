@@ -12,6 +12,7 @@ import { AlertService } from 'src/app/features/alert/services/alert.service';
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.css']
 })
+
 export class RegisterPageComponent implements OnInit {
   form!: FormGroup<registerRequest>;
   loading = false;

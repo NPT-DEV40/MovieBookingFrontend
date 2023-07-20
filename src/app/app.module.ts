@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -8,13 +8,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './materials/material.module';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ChatComponent } from './features/chat/chat.component';
 
-const config: SocketIoConfig = { url: 'ws://localhost:8080/websocket', options: {} };
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  withCredentials: false
+}
+
+const config: SocketIoConfig = { url: 'http://localhost:8080/websocket', options: httpOptions };
 
 @NgModule({
   declarations: [

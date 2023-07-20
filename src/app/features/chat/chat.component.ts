@@ -14,13 +14,6 @@ export class ChatComponent {
 
   ngOnInit() {
     this.webSocketService.connect();
-    this.webSocketService.getMessage().subscribe((message: any) => {
-      this.messages.push(message);
-    });
-  }
-
-  ngOnDestroy() {
-    this.webSocketService.disconnect();
   }
 
   sendMessage() {

@@ -16,10 +16,14 @@ export class JwtInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const user = this.authService.userValue;
-    const token = user?.token;
+    const token = sessionStorage.getItem('token');
     const api = request.url.startsWith(environment.api);
 
-    console.log('user: ' + user);
+    console.log(user?.email);
+
+    console.log('token inteceptor: ' + token);
+
+    console.log('api inteceptor: ' + api);
 
 
     if(api && token && user) {

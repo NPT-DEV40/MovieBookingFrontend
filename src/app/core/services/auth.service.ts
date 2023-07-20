@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, map } from 'rxjs';
-import { user } from 'src/app/features/users/interfaces/user';
+import { BehaviorSubject, Observable, map, shareReplay, tap } from 'rxjs';
+import { User } from 'src/app/features/users/interfaces/user';
 import { UserService } from 'src/app/features/users/services/user.service';
 import { environment } from 'src/environments/environment';
 import { registerRequest } from '../interfaces/registerRequest';
@@ -13,15 +13,14 @@ const httpOptions = {
 }
 
 
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
 
-  private userSubject: BehaviorSubject<user | null>;
-  public user: Observable<user | null>;
+  private userSubject: BehaviorSubject<User | null>;
+  public user: Observable<User | null>;
 
 
   constructor(
@@ -29,7 +28,7 @@ export class AuthService {
     private http: HttpClient,
     private userService: UserService
   ) {
-    this.userSubject = new BehaviorSubject<user | null>(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null);
+    this.userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
     this.user = this.userSubject.asObservable(); // Convert BehaviorSubject to Observable, so that it can be subscribed but not have permission to change value
   }
 
@@ -38,32 +37,29 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    return this.http.post(environment.api + 'auth/login',
+    return this.http.post<User>(environment.api + 'auth/login',
       {
         username,
         password
-      }, httpOptions).pipe(map((response: any) => {
+      }, httpOptions).pipe(tap((response: any) => {
         sessionStorage.setItem('token', response["token"]);
         console.log("token: " + sessionStorage.getItem('token'));
         this.userService.saveUser(response);
         this.userSubject.next(response);
-      }));
+      }), shareReplay());
   }
 
   LoginWithGoogle(credentialResponse: any) {
     return this.http.post(environment.api + 'auth/login/google',
-      JSON.stringify(credentialResponse),
+      credentialResponse,
       httpOptions).pipe(map((response: any) => {
-        console.log(response);
+        console.log("reponse:" + response);
         sessionStorage.setItem('token', response["token"]);
         this.userService.saveUser(response);
         this.userSubject.next(response);
       }));
   }
 
-  LoginWithFacebook(credentialResponse: any) {
-    
-  }
 
   register(registerRequest: registerRequest): Observable<any> {
     return this.http.post(environment.api + 'auth/register',

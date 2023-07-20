@@ -9,7 +9,9 @@ export class WebsocketService {
   constructor(private socket: Socket) {}
 
   connect() {
-    this.socket.connect();
+    this.socket.on('news', (data: any) => {
+      this.handleMessage(data);
+    });
   }
 
   disconnect() {
@@ -17,11 +19,15 @@ export class WebsocketService {
   }
 
   sendMessage(msg: string) {
-    this.socket.emit('message', msg);
+    this.socket.emit('hello ', msg);
   }
 
   getMessage() {
     return this.socket.fromEvent('message');
+  }
+
+  handleMessage(data: any) {
+    console.log("message: ", data);
   }
 
 }

@@ -30,7 +30,6 @@ export class LoginPageComponent implements OnInit {
     private router: Router,
     private alert: AlertService,
     private auth: AuthService,
-    private socialService: SocialAuthService
   ) { }
 
   ngOnInit(): void {
@@ -82,14 +81,6 @@ export class LoginPageComponent implements OnInit {
       error: e => {
         console.log(e);
       }
-    });
-  }
-
-  loginWithFacebook(): void {
-    this.socialService.signIn(FacebookLoginProvider.PROVIDER_ID).then((x) => {
-      console.log(x);
-    }, (e) => {
-      console.log(e);
     });
   }
 
