@@ -12,6 +12,8 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { HeaderComponent } from './features/header/header.component';
 import { FooterComponent } from './features/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FilmComponent } from './features/film/film.component';
+import { CinemaComponent } from './features/cinema/cinema.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
+    FilmComponent,
+    CinemaComponent,
   ],
   imports: [
     BrowserModule,
