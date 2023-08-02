@@ -1,0 +1,7 @@
+<div>
+    <input type="file" (change)="chooseFile($event)" />
+    
+    <img [src]="imagePreviewURL" *ngIf="imagePreviewURL" class="preview" alt="Image Preview">
+
+    <button (click)="addImage()">Add Image</button>
+</div>
