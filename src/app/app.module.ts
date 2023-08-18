@@ -13,28 +13,26 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ChatComponent } from './features/chat/chat.component';
 import { FormsModule } from '@angular/forms';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { AdminMovieEditPageComponent } from './admin-pages/admin-movie-edit-page/admin-movie-edit-page.component';
-import { HeaderComponent } from './features/headers/components/header.component';
-import { FooterComponent } from './features/footers/components/footer.component';
+import { OrderComponent } from './features/order/components/order.component';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   withCredentials: false
 }
 
-const config: SocketIoConfig = { url: 'http://localhost:8080/websocket', options: httpOptions };
+const config: SocketIoConfig = { url: 'http://localhost:8080', options: {path: "/chat"} };
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    HeaderComponent,
-    FooterComponent,
     AdminMovieEditPageComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,11 +49,9 @@ const config: SocketIoConfig = { url: 'http://localhost:8080/websocket', options
     provideFirestore(() => getFirestore()),
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

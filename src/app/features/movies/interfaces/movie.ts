@@ -1,4 +1,4 @@
-export class Movie {
+export interface Movie {
     name?: string;
     description?: string;
     genre?: string;
@@ -9,5 +9,5 @@ export class Movie {
     image?: string;
     rating?: number;
     length?: number;
-    isShowing = false;
+    isShowing: false;
 }

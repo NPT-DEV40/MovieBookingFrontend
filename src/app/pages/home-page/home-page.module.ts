@@ -11,12 +11,15 @@ import { AppModule } from 'src/app/app.module';
 
 
 @NgModule({
-  declarations: [ HomePageComponent, MovieComponent],
+  declarations: [ HomePageComponent, MovieComponent, HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     HomePageRoutingModule,
     FontAwesomeModule,
-    AppModule
+  ],
+  exports: [
+    FooterComponent,
+    HeaderComponent
   ]
 })
 export class HomePageModule { }

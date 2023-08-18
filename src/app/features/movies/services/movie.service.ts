@@ -16,27 +16,43 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
+  AddMovie(movieRequest: Movie) {
+    return this.http.post(environment.api + 'movie/add-movie', {
+      movieRequest
+    }, httpOptions);
+  }
+
+  UpdateMovie(movieRequest: Movie, id: any) {
+    return this.http.put(environment.api + `movie/update-movie/${id}`, {
+      movieRequest
+    });
+  }
+
+  DeleteMovie(id: any) {
+    return this.http.delete(environment.api + `movie/delete-movie/${id}`);
+  }
+
   getAllMovies() {
     return this.http.get(environment.api + 'movie/all-movies', httpOptions)
-        .pipe(map((response:any) => {
-          // Transfer response to Movie[]
-          let movies: Movie[] = [];
-          response.forEach((movie: any) => {
-            return movies.push({
-              name: movie.movieName,
-              description: movie.movieDescription,
-              genre: movie.movieGenre,
-              language: movie.movieLanguage,
-              director: movie.movieDirector,
-              releaseDate: movie.movieReleaseDate,
-              trailer: movie.movieTrailer,
-              image: movie.movieImage,
-              rating: movie.movieRating,
-              length: movie.movieLength,
-              isShowing: false
-            });
+      .pipe(map((response: any) => {
+        // Transfer response to Movie[]
+        let movies: Movie[] = [];
+        response.forEach((movie: any) => {
+          return movies.push({
+            name: movie.movieName,
+            description: movie.movieDescription,
+            genre: movie.movieGenre,
+            language: movie.movieLanguage,
+            director: movie.movieDirector,
+            releaseDate: movie.movieReleaseDate,
+            trailer: movie.movieTrailer,
+            image: movie.movieImage,
+            rating: movie.movieRating,
+            length: movie.movieLength,
+            isShowing: false
           });
-          return movies;
-        }));
+        });
+        return movies;
+      }));
   }
 }

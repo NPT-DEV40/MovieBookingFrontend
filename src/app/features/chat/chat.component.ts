@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Socket } from 'ngx-socket-io';
 import { WebsocketService } from 'src/app/core/services/websocket.service';
 
 @Component({
@@ -6,18 +7,28 @@ import { WebsocketService } from 'src/app/core/services/websocket.service';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent {
-  message!: string;
-  messages: string[] = [];
+export class ChatComponent implements OnInit {
+  webSocketService!: WebsocketService;
+  greeting: any;
+  name!: string;
+  
+  ngOnInit(): void {
+      this.webSocketService = new WebsocketService(new ChatComponent());
+  }
 
-  constructor(private webSocketService: WebsocketService) { }
+  connect() {
+    this.webSocketService._connect();
+  }
 
-  ngOnInit() {
-    this.webSocketService.connect();
+  disconnect() {
+    this.webSocketService._disconnect();
   }
 
   sendMessage() {
-    this.webSocketService.sendMessage(this.message);
-    this.message = '';
+    this.webSocketService._send(this.name);
+  }
+
+  handleMessage(message: any) {
+    this.greeting = message;
   }
 }
