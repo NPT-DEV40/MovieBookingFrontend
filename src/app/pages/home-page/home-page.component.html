@@ -1,3 +1,21 @@
-<h1>YOOOOOOOO! It's work</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg">
+            <div class="home">
+                <app-header></app-header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg home__wrapper">
+                            <h1>YOOOOOOOO! It's work</h1>
 
-<button (click)="logout()">log</button>
+                            <button (click)="logout()">log</button>
+
+                            <app-movie [movies] = "movieList"></app-movie>
+                        </div>
+                    </div>
+                </div>
+                <app-footer></app-footer>
+            </div>
+        </div>
+    </div>
+</div>

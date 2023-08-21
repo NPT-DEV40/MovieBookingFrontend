@@ -1,0 +1,26 @@
+.home{ 
+    display: flex;
+    flex-direction: column; 
+    background-color: var(--black); 
+    width: 100vw;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background-color: transparent;
+    justify-content: center;
+}
+
+.home__wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+h1{
+    color: var(--white);
+}
