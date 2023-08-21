@@ -6,11 +6,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './materials/material.module';
-import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ChatComponent } from './features/chat/chat.component';
 import { FormsModule } from '@angular/forms';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -25,7 +23,7 @@ const httpOptions = {
   withCredentials: false
 }
 
-const config: SocketIoConfig = { url: 'http://localhost:8080', options: {path: "/chat"} };
+
 
 @NgModule({
   declarations: [
@@ -42,7 +40,6 @@ const config: SocketIoConfig = { url: 'http://localhost:8080', options: {path: "
     FormsModule,
     MaterialModule,
     FontAwesomeModule,
-    SocketIoModule.forRoot(config),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),

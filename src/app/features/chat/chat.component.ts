@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
+import { Message } from '@stomp/stompjs';
 import { WebsocketService } from 'src/app/core/services/websocket.service';
 
 @Component({
@@ -11,24 +11,27 @@ export class ChatComponent implements OnInit {
   webSocketService!: WebsocketService;
   greeting: any;
   name!: string;
-  
-  ngOnInit(): void {
-      this.webSocketService = new WebsocketService(new ChatComponent());
+  ngOnInit() {
+    this.webSocketService = new WebsocketService(new ChatComponent());
   }
 
-  connect() {
+  connect(){
     this.webSocketService._connect();
   }
 
-  disconnect() {
+  disconnect(){
     this.webSocketService._disconnect();
   }
 
-  sendMessage() {
+  sendMessage(){
     this.webSocketService._send(this.name);
   }
 
-  handleMessage(message: any) {
+  handleMessage(message: any){
     this.greeting = message;
   }
+
+  
+  
 }
+
