@@ -14,6 +14,7 @@ import { FooterComponent } from './features/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FilmComponent } from './features/film/film.component';
 import { CinemaComponent } from './features/cinema/cinema.component';
+import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CinemaComponent } from './features/cinema/cinema.component';
     FooterComponent,
     FilmComponent,
     CinemaComponent,
+    ThanksPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.success_message{
+
+}
+
+.icon_check{
+
+}
+
+.label-1{
+    color: var(--white);
+}
+
+.label-2{
+    color: var(--primary-color-1);
+}
+
+.thanks_message{
+
+}
+
+.label-3{
+    color: var(--white);
+}
+
+.label-4{
+    color: var(--primary-color-1);
+}
+
+.poster{
+
+}
+
+.button{
+
+}
