@@ -17,11 +17,24 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { AdminMovieEditPageComponent } from './admin-pages/admin-movie-edit-page/admin-movie-edit-page.component';
 import { OrderComponent } from './features/order/components/order.component';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { AuthService } from './core/services/auth.service';
+import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   withCredentials: false
 }
+
+// export function jwtOptionFactor(authService: AuthService) {
+//   return {
+//     tokenGetter: () => {
+//       return authService.getAccessToken();
+//     },
+//     allowedDomains: ['http://localhost:4200/*'],
+//     disallowedRoutes: ['http://localhost:8080/api/auth/login']
+//   };
+// }
 
 
 
@@ -44,11 +57,18 @@ const httpOptions = {
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
     provideFirestore(() => getFirestore()),
+    // JwtModule.forRoot({
+    //   jwtOptionsProvider: {
+    //     provide: JWT_OPTIONS,
+    //     useFactory: jwtOptionFactor,
+    //     deps: [AuthService]
+    //   }
+    // }),
   ],
   exports: [
   ],
   providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
