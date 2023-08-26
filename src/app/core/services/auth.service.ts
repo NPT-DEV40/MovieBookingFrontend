@@ -6,6 +6,7 @@ import { User } from 'src/app/features/users/interfaces/user';
 import { UserService } from 'src/app/features/users/services/user.service';
 import { environment } from 'src/environments/environment';
 import { registerRequest } from '../interfaces/registerRequest';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -21,6 +22,7 @@ export class AuthService {
 
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
+  jwtService: JwtHelperService = new JwtHelperService();
 
 
   constructor(
@@ -36,12 +38,27 @@ export class AuthService {
     return this.userSubject.value;
   }
 
+  getAccessToken(): string {
+    var token = sessionStorage.getItem('token');
+    if(token) {
+      var isTokenExpire = this.jwtService.isTokenExpired(token);
+      if(isTokenExpire) {
+        this.userSubject.next(null);
+        return "";
+      }
+      var tokenPayload = this.jwtService.decodeToken(token);
+      this.userSubject.next(tokenPayload);
+      return token;
+    }
+    return "";
+  }
+
   login(username: string, password: string) {
     return this.http.post<User>(environment.api + 'auth/login',
       {
         username,
         password
-      }, httpOptions).pipe(tap((response: any) => {
+      }, httpOptions).pipe(map((response: any) => {
         sessionStorage.setItem('token', response["token"]);
         console.log("token: " + sessionStorage.getItem('token'));
         this.userService.saveUser(response);
