@@ -2,25 +2,105 @@
     display: flex;
     flex-direction: column; 
     background-color: var(--black); 
-    width: 100vw;
+    max-width: 100%;
     position: relative;
 }
 
-.container{
-    display: flex;
+.container {
+   /* display: grid;
+    grid-template-columns: 100%;  hoặc bất kỳ tỉ lệ nào bạn muốn */
+    /* grid-gap: 40px;  hoặc bất kỳ khoảng cách nào bạn muốn */
     align-items: center;
     padding-top: 80px;
-    background-color: transparent;
     justify-content: center;
-}
+    margin-bottom: 180px;
+    margin-top: 40px;
+}    
 
 .home__wrapper{
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    width: 100%;
 }
 
-h1{
+
+.home__content{
+    /* display: grid;
+    grid-template-columns: 65% 35%; */
+    grid-gap: 60px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.home__content-film{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-right: 40px;
+}
+
+.film-new-releases, .film-history{
+    display: block;
+    flex-direction: column;
+    
+    /* max-width: 600px; */
+}
+
+.list-film__title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.name-film-group{
+    color: var(--primary-color-1);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+}
+
+.view-more{
     color: var(--white);
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+
+.list-film{
+    display: flex;
+    justify-content: space-between;
+}
+
+.film-coming-soon{
+    display: block;
+    flex-direction: column;
+    
+    /* max-width: 600px; */
+}
+
+.home__content-system-cinema{
+    /* display: flex;
+    flex-direction: column;
+    /* margin-left: 40px; 
+    text-align: left;
+    float: left;
+    justify-content: stretch;
+    align-items: flex-start;
+    box-sizing: border-box; */
+    display: grid;
+    justify-items: left;
+    margin-top: -20px;
+}
+
+.system-cinema__title{
+    color: #FFF;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+    margin-bottom: 20px;
 }

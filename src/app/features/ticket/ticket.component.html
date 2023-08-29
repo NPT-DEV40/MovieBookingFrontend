@@ -1,0 +1,18 @@
+<div class="ticket"  [ngClass]="classNames({'ticket-small':size === 'small','ticket-big':size === 'big'})">
+    <img src="assets/images/The-Pope-s-Exorcist-poster.png" alt="Film image" [ngClass]="classNames({'image-small':size === 'small','image-big':size === 'big'})">
+    <div class="information">
+        <div class="top">
+            <label for="" [ngClass]="classNames({'title-small':size === 'small','title-big':size === 'big'})">THE POPE'S EXORCIST</label>
+            <label for="" [ngClass]="classNames({'type-small':size === 'small','type-big':size === 'big'})">Horror / Thriller</label>
+        </div>
+        <div class="mid">
+            <label for="" [ngClass]="classNames({'cinemar-small':size === 'small','cinemar-big':size === 'big'})">Cinema Athena</label>
+            <label for="" [ngClass]="classNames({'room-small':size === 'small','room-big':size === 'big'})">Showroom No. 7</label>
+            <label for="" [ngClass]="classNames({'seat-small':size === 'small','seat-big':size === 'big'})">Seats No. 15 | 16 | 17</label>
+        </div>
+        <div class="bottom">
+            <label for="" [ngClass]="classNames({'date-small':size === 'small','date-big':size === 'big'})">Friday, 16 June 2023</label>
+            <label for="" [ngClass]="classNames({'time-small':size === 'small','time-big':size === 'big'})">Showtime 6:00 - 8:00 PM</label>
+        </div>
+    </div>
+</div>

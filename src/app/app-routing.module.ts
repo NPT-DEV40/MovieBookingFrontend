@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'admin', loadChildren: () => import('./admin-pages/admin-home-page/admin-home-page.module').then(m => m.AdminHomePageModule) },
   { path: 'chat', component: ChatComponent, canActivate: [authGuard] },
   {path: 'order',component: OrderComponent},
+  {path: 'thanks', loadChildren: () => import('./pages/thanks-page/thanks-page.module').then(m => m.ThanksPageModule)},
 ];
 
 @NgModule({

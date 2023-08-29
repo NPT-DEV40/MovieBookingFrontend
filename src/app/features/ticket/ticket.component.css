@@ -1,0 +1,104 @@
+.ticket{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+}
+
+.ticket-small{
+    min-width: 20vw;
+}
+
+.image-small{
+    height: 120px;
+    mix-blend-mode: hard-light;
+}
+
+.image-big{
+    height: 400px;
+    mix-blend-mode: hard-light;
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.title-small{
+    color: var(--primary-color-1);
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 1.1px;
+}
+
+.title-big{
+    color: var(--primary-color-1);
+    font-weight: 900;
+    font-size: 2.7rem;
+    line-height: normal;
+    letter-spacing: 2.97px;
+}
+
+.type-big{
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.2px;
+    margin-bottom: 40px;
+}
+
+.mid{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.cinemar-small,.cinemar-big{
+    color: var(--primary-color-1);  
+    font-weight: 900;
+    line-height: normal;
+}
+
+.cinemar-small{
+    font-size: 0.8rem;
+    letter-spacing: 0.88px;
+}
+
+.cinemar-big{
+    font-size: 2.7rem;
+    letter-spacing: 2.97px;
+}
+
+.type-small,.room-small,.seat-small, .date-small,.time-small {
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.88px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.room-big,.seat-big,.date-big,.time-big{
+    color: var(--white);
+    font-size: 2.7rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.97px;
+}
+
+.seat-big{
+    margin-bottom: 20px;
+}

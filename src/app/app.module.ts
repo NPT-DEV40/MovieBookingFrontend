@@ -18,8 +18,6 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { AdminMovieEditPageComponent } from './admin-pages/admin-movie-edit-page/admin-movie-edit-page.component';
 import { OrderComponent } from './features/order/components/order.component';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
-import { AuthService } from './core/services/auth.service';
-import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -37,6 +35,8 @@ const httpOptions = {
 // }
 
 
+import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
+import { TicketComponent } from './features/ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,8 @@ const httpOptions = {
     ChatComponent,
     AdminMovieEditPageComponent,
     OrderComponent,
+    ThanksPageComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,

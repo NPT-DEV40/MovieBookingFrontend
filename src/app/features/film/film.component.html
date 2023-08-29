@@ -1,0 +1,6 @@
+<div class="container" [ngClass]="classNames({'film-small':size === 'small','film-big':size === 'big'})">
+    <img src="assets/images/thePopesExorcist.png" alt="film_poster" class="film__poster" [ngClass]="classNames({'film-small':size === 'small','film-big':size === 'big'})">
+    <label for="film-title" class="film__title" [ngClass]="classNames({'film-small':size === 'small','film-big':size === 'big'})">The Pope`s Exorcist</label>
+    <label for="type" class="film__type" [ngClass]="classNames({'film-small':size === 'small','film-big':size === 'big'})">Horror</label>
+</div>
+
