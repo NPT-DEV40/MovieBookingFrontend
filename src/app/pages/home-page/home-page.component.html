@@ -4,38 +4,44 @@
         <div class="row">
             <div class="col-lg home__wrapper">
                 <div class="home__content">
-                    <div class="home__content-film">
-                        <div class="film-new-releases">
-                            <div class="list-film__title">
-                                <label for="film-group" class="name-film-group">NEW RELEASES</label>
-                                <label for="film-group" class="view-more">View more</label>
+                    <app-slide></app-slide>
+                    <app-buy-ticket></app-buy-ticket>
+                    <div class="top">
+                        <div class="home__content-film">
+                            <div class="film-new-releases">
+                                <div class="list-film__title">
+                                    <label for="film-group" class="name-film-group">NEW RELEASES</label>
+                                    <label for="film-group" class="view-more">View more</label>
+                                </div>
+                                <div class="list-film">
+                                    <app-film size="small"></app-film>
+                                    <app-film size="small"></app-film>
+                                    <app-film size="small"></app-film>
+                                    <app-film size="small"></app-film>
+                                    <app-film size="small"></app-film>
+                                </div>
                             </div>
-                            <div class="list-film">
-                                <app-film size="small"></app-film>
-                                <app-film size="small"></app-film>
-                                <app-film size="small"></app-film>
-                                <app-film size="small"></app-film>
+                            <div class="film-coming-soon">
+                                <div class="list-film__title">
+                                    <label for="film-group" class="name-film-group">COMING SOON</label>
+                                    <label for="film-group" class="view-more">View more</label>
+                                </div>
+                                <div class="list-film">
+                                    <app-film size="small"></app-film>
+                                    <app-film size="small"></app-film>
+                                    <app-film size="small"></app-film>
+                                    <app-film size="small"></app-film>
+                                    <app-film size="small"></app-film>
+                                </div>
                             </div>
                         </div>
-                        <div class="film-coming-soon">
-                            <div class="list-film__title">
-                                <label for="film-group" class="name-film-group">COMING SOON</label>
-                                <label for="film-group" class="view-more">View more</label>
-                            </div>
-                            <div class="list-film">
-                                <app-film size="small"></app-film>
-                                <app-film size="small"></app-film>
-                                <app-film size="small"></app-film>
-                                <app-film size="small"></app-film>
-                            </div>
+                        <div class="home__content-system-cinema">
+                            <label for="system-cinma__title" class="system-cinema__title">CINEMA SYSTEM</label>
+                            <app-cinema size="small"></app-cinema>
+                            <app-cinema size="small"></app-cinema>
+                            <app-cinema size="small"></app-cinema>
+                            <app-cinema size="small"></app-cinema>
                         </div>
-                    </div>
-                    <div class="home__content-system-cinema">
-                        <label for="system-cinma__title" class="system-cinema__title">CINEMA SYSTEM</label>
-                        <app-cinema size="small"></app-cinema>
-                        <app-cinema size="small"></app-cinema>
-                        <app-cinema size="small"></app-cinema>
-                        <app-cinema size="small"></app-cinema>
                     </div>
                     <div class="film-history">
                         <div class="list-film__title">
@@ -50,7 +56,7 @@
                             <app-film size="small"></app-film>
                             <!-- <div class="header__action-icon-wrapper"><fa-icon [icon]="faCircleChevronRight" class="header__action-film" ></fa-icon></div>  -->
                     </div> 
-                </div>      
+                    </div>      
             </div>
         </div>
     </div>
