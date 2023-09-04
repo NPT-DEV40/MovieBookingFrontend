@@ -4,6 +4,7 @@
   --primary-color-1:#FFC107;
   --primary-color-2:#FF7A00;
   --primary-color-3:#FF7171;
+  --primary-color-4: rgba(217, 217, 217, 0.37);
   --white: white;
   --black: black;
   --green:#6ED87A;
@@ -45,4 +46,8 @@ input,
 
 input::placeholder {
   font-size: 1.6rem;
+}
+
+fa-icon {
+  cursor: pointer;
 }

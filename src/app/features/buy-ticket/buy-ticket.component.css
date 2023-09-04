@@ -1,0 +1,65 @@
+.buy_ticket{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.buy__ticket-top, .buy__ticket-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.select{
+    min-width: 200px;
+    min-height: 40px;
+    border-radius: 14px;
+    border: 5px solid var(--primary-color-1);
+    background: var(--white);
+    color: var(--black);
+}
+
+.select ::placeholder{
+    color: var(--black);
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+.select+ .select {
+    margin-left: 100px;
+}
+
+.option{
+    color: var(--black);
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+.proceed-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--primary-color-1);
+    border-radius: 14px;
+    border: 2px solid var(--primary-color-1);
+    min-width: 160px;
+    min-height: 45px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    margin: auto;
+}
+
+.icon_right{
+    font-size: 3.2rem;
+    margin-left: 10px;
+}

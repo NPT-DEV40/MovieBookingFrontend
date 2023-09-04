@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatSelectModule} from '@angular/material/select';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './materials/material.module';
 import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment.development';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+<<<<<<< HEAD
 import { ChatComponent } from './features/chat/chat.component';
 import { FormsModule } from '@angular/forms';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -37,15 +39,35 @@ const httpOptions = {
 
 import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
 import { TicketComponent } from './features/ticket/ticket.component';
+=======
+import { FilmComponent } from './features/film/film.component';
+import { CinemaComponent } from './features/cinema/cinema.component';
+import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
+import { TicketComponent } from './features/ticket/ticket.component';
+import { BuyTicketComponent } from './features/buy-ticket/buy-ticket.component';
+import { SlideComponent } from './features/slide/slide.component';
+>>>>>>> dev-son
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     ChatComponent,
     AdminMovieEditPageComponent,
     OrderComponent,
     ThanksPageComponent,
     TicketComponent
+=======
+    HomePageComponent,
+    HeaderComponent,
+    FooterComponent,
+    FilmComponent,
+    CinemaComponent,
+    ThanksPageComponent,
+    TicketComponent,
+    BuyTicketComponent,
+    SlideComponent,
+>>>>>>> dev-son
   ],
   imports: [
     BrowserModule,
@@ -55,6 +77,7 @@ import { TicketComponent } from './features/ticket/ticket.component';
     FormsModule,
     MaterialModule,
     FontAwesomeModule,
+<<<<<<< HEAD
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
@@ -68,6 +91,10 @@ import { TicketComponent } from './features/ticket/ticket.component';
     // }),
   ],
   exports: [
+=======
+    MatSelectModule,
+    SlickCarouselModule,
+>>>>>>> dev-son
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

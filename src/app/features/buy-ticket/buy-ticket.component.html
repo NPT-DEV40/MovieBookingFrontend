@@ -1,0 +1,29 @@
+<div class="buy_ticket">
+    <div class="buy__ticket-top">
+        <!-- <select name="cinema" class="select" ngModel #cinema="ngModel" required  >
+            <option [ngValue]="null" [disabled]="true" class="option">Select A Cinema</option>
+        </select> -->
+        <mat-select placeholder="Select A Cinema" class="select"></mat-select>
+        <mat-select placeholder="Select Seats" class="select"></mat-select>
+    </div>
+    <div class="buy__ticket-bottom">
+        <mat-select placeholder="Select A Date" class="select"></mat-select>
+        <mat-select placeholder="Select A Showtime" class="select"></mat-select>
+    </div>
+    <button class="proceed-btn">
+        Proceed To Shopping Cart
+        <fa-icon [icon]="faCircleChevronRight" class="icon_right" ></fa-icon>
+    </button>
+</div>
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <mat-select>
+      <mat-select-trigger>
+        <mat-icon>fastfood</mat-icon>  icon for the select 
+        {{food ? food.viewValue : 'No value selected'}}  placeholder for the select 
+      </mat-select-trigger>
+      <mat-option *ngFor="let food of foods" [value]="food">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->

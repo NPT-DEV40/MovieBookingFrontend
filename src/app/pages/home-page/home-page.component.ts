@@ -25,15 +25,4 @@ export class HomePageComponent implements OnInit {
     });
     console.log("test movie");
   }
-  logout() {
-    this.auth.logout();
-  }
-
-  // testMovie() {
-  //   this.movieService.getAllMovies().subscribe((response: any) => {
-  //     this.movieList = response;
-  //     console.log(this.movieList);
-  //   });
-  //   console.log("test movie");
-  // }
 }

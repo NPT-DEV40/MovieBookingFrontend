@@ -1,4 +1,4 @@
-<div class="cinema" [ngClass]="classNames({'cinema-small':size === 'small','cinema-big':size === 'big'})">
+<div [ngClass]="classNames({'cinema-small':size === 'small','cinema-big':size === 'big'})">
     <img src="assets/images/benthanh.png" alt="benthanh" class="cinema__img" [ngClass]="classNames({'cinema-small':size === 'small','cinema-big':size === 'big'})">
     <div class="cinema__infor">
         <label for="cinema__name" class="cinema__infor-name" [ngClass]="classNames({'cinema-small':size === 'small','cinema-big':size === 'big'})">Film ticket Ben Thanh</label>

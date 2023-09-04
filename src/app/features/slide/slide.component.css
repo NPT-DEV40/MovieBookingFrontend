@@ -1,0 +1,9 @@
+.slide-component {
+    width: 1440px;
+    height: 377px;
+}
+.slide-component img {
+    width: 480px;
+    height: 377px;
+    float: left;
+}
