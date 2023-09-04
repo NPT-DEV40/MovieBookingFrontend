@@ -10,18 +10,25 @@ import { MovieComponent } from 'src/app/features/movies/components/movie/movie.c
 import { AppModule } from 'src/app/app.module';
 import { FilmComponent } from 'src/app/features/film/film.component';
 import { CinemaComponent } from 'src/app/features/cinema/cinema.component';
+import { SlideComponent } from 'src/app/features/slide/slide.component';
+import { BuyTicketComponent } from 'src/app/features/buy-ticket/buy-ticket.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MaterialModule } from 'src/app/materials/material.module';
 
 
 @NgModule({
-  declarations: [ HomePageComponent, MovieComponent, HeaderComponent, FooterComponent, FilmComponent, CinemaComponent],
+  declarations: [ HomePageComponent, MovieComponent, 
+    HeaderComponent, FooterComponent, FilmComponent, CinemaComponent, SlideComponent, BuyTicketComponent],
   imports: [
     CommonModule,
     HomePageRoutingModule,
     FontAwesomeModule,
+    SlickCarouselModule,
+    MaterialModule
   ],
   exports: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
   ]
 })
 export class HomePageModule {

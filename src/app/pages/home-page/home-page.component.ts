@@ -19,10 +19,10 @@ export class HomePageComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.movieService.getAllMovies().subscribe((response: any) => {
-      this.movieList = response;
-      console.log(this.movieList);
-    });
-    console.log("test movie");
+    // this.movieService.getAllMovies().subscribe((response: any) => {
+    //   this.movieList = response;
+    //   console.log(this.movieList);
+    // });
+    // console.log("test movie");
   }
 }
