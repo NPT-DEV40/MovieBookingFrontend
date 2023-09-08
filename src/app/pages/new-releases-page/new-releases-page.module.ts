@@ -7,16 +7,27 @@ import { FooterComponent } from 'src/app/features/footers/components/footer.comp
 import { FilmComponent } from 'src/app/features/film/film.component';
 import { SlideComponent } from 'src/app/features/slide/slide.component';
 import { HomePageModule } from '../home-page/home-page.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewReleasesPageComponent } from './new-releases-page.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NewReleasesPageComponent,
+    HeaderComponent,
+    FooterComponent,
+    SlideComponent,
+    FilmComponent,
+    BuyTicketComponent,
+  ],
   imports: [
     CommonModule,
     NewReleasesPageRoutingModule,
-    HomePageModule
+    FontAwesomeModule,
   ],
   exports: [
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class NewReleasesPageModule { }
