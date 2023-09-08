@@ -28,6 +28,9 @@ import { MaterialModule } from 'src/app/materials/material.module';
   exports: [
     FooterComponent,
     HeaderComponent,
+    SlideComponent,
+    FilmComponent,
+    BuyTicketComponent,
   ]
 })
 export class HomePageModule {

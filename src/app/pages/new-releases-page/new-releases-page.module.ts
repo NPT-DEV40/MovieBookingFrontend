@@ -14,20 +14,14 @@ import { NewReleasesPageComponent } from './new-releases-page.component';
 @NgModule({
   declarations: [
     NewReleasesPageComponent,
-    HeaderComponent,
-    FooterComponent,
-    SlideComponent,
-    FilmComponent,
-    BuyTicketComponent,
   ],
   imports: [
     CommonModule,
     NewReleasesPageRoutingModule,
     FontAwesomeModule,
+    HomePageModule
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent
   ]
 })
 export class NewReleasesPageModule { }
