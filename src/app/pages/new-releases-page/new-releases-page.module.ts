@@ -6,17 +6,17 @@ import { NewReleasesPageRoutingModule } from './new-releases-page-routing.module
 import { FooterComponent } from 'src/app/features/footers/components/footer.component';
 import { FilmComponent } from 'src/app/features/film/film.component';
 import { SlideComponent } from 'src/app/features/slide/slide.component';
+import { HomePageModule } from '../home-page/home-page.module';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, FilmComponent, SlideComponent, BuyTicketComponent],
+  declarations: [],
   imports: [
     CommonModule,
-    NewReleasesPageRoutingModule
+    NewReleasesPageRoutingModule,
+    HomePageModule
   ],
   exports: [
-    FooterComponent,
-    HeaderComponent,
   ]
 })
 export class NewReleasesPageModule { }

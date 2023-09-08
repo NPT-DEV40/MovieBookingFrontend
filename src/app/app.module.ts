@@ -83,6 +83,7 @@ import { HomePageModule } from "./pages/home-page/home-page.module";
         AppRoutingModule,
         FormsModule,
         MaterialModule,
+        HomePageModule,
         FontAwesomeModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideAuth(() => getAuth()),
