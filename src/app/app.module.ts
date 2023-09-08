@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './materials/material.module';
@@ -42,57 +41,53 @@ import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
 import { TicketComponent } from './features/ticket/ticket.component';
 import { BuyTicketComponent } from './features/buy-ticket/buy-ticket.component';
 import { SlideComponent } from './features/slide/slide.component';
+import { NewReleasesPageComponent } from './pages/new-releases-page/new-releases-page.component';
+import { HomePageModule } from "./pages/home-page/home-page.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ChatComponent,
-    AdminMovieEditPageComponent,
-    OrderComponent,
-    ThanksPageComponent,
-    TicketComponent,
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    MaterialModule,
-    FontAwesomeModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideStorage(() => getStorage()),
-    provideFirestore(() => getFirestore()),
-    // JwtModule.forRoot({
-    //   jwtOptionsProvider: {
-    //     provide: JWT_OPTIONS,
-    //     useFactory: jwtOptionFactor,
-    //     deps: [AuthService]
-    //   }
-    // }),
-  ],
-  exports: [
-    MatSelectModule,
-  ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(environment.googleId)
-          },
-        ],
-        onError: (err) => {
-          console.error(err);
+    declarations: [
+        AppComponent,
+        ChatComponent,
+        AdminMovieEditPageComponent,
+        OrderComponent,
+        ThanksPageComponent,
+        TicketComponent,
+        NewReleasesPageComponent,
+    ],
+    exports: [
+        MatSelectModule,
+    ],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: false,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider(environment.googleId)
+                    },
+                ],
+                onError: (err) => {
+                    console.error(err);
+                }
+            } as SocialAuthServiceConfig,
         }
-      } as SocialAuthServiceConfig,
-    }
-  ],
-  bootstrap: [AppComponent]
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule,
+        MaterialModule,
+        FontAwesomeModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAuth(() => getAuth()),
+        provideStorage(() => getStorage()),
+        provideFirestore(() => getFirestore()),
+    ]
 })
 export class AppModule { }

@@ -1,6 +1,9 @@
 .buy_ticket{
-    width: 50%;
+    max-width: 60%;
     margin: auto;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: 4px solid var(--primary-color-1);
     margin-bottom: 40px;
 }
 
@@ -8,38 +11,50 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+}
+
+.select-wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin: 30px 20px 0 20px;
 }
 
 .select{
-    min-width: 200px;
+    min-width: 250px;
     min-height: 40px;
     border-radius: 14px;
     border: 5px solid var(--primary-color-1);
     background: var(--white);
     color: var(--black);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: var(--black);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    appearance: none;
 }
 
-.select ::placeholder{
+/* .select ::placeholder{
     color: var(--black);
     text-align: center;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 0.5px;
-}
-
-.select+ .select {
-    margin-left: 100px;
-}
+} */
 
 .option{
-    color: var(--black);
+    color: var(--primary-color-1);
     text-align: center;
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1.6rem; 
     line-height: 24px;
     letter-spacing: 0.5px;
+    background-color: var(--black);
 }
 
 .proceed-btn{
@@ -57,9 +72,22 @@
     letter-spacing: 0.5px;
     padding: 0 10px;
     margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .icon_right{
     font-size: 3.2rem;
     margin-left: 10px;
+}
+
+.icon_down {
+    position: absolute;
+    font-size: 5rem;
+    right: -10px;
+    z-index: 1;
+    background-color: var(--white);
+    color: var(--primary-color-1);
+    border-radius: 50%;
+    margin: auto;
 }

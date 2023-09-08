@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faCircleChevronRight, faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -10,4 +10,5 @@ import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class BuyTicketComponent {
   faCircleChevronRight = faCircleChevronRight;
+  faCircleChevronDown = faCircleChevronDown;
 }

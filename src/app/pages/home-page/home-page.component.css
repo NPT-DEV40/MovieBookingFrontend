@@ -13,7 +13,6 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 120px;
     margin-bottom: 180px;
 }
 
@@ -57,6 +56,12 @@
 .film-history{
     margin-bottom: 40px;
     transform: translateX(-5%);
+}
+
+.film-history .list-film{
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .list-film__title{
@@ -113,4 +118,20 @@
     font-weight: 800;
     letter-spacing: 2.2px;
     margin-bottom: 20px;
+}
+
+.icon-wrapper{
+    display: flex;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    margin: auto;
+    transform: translateY(-50%);
+    margin-left: 0;
+}
+
+.icon-right{
+    font-size: 5rem;
+    color: var(--primary-color-1);
 }

@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 const slides = [ {img: "assets/images/slide1.jpg"}, {img: "assets/images/slide2.jpg"}, {img: "assets/images/slide3.jpg"} ];
 const slideConfig = {items: 3, dots: true, nav: true}; 
 
+
+
 @Component({
   selector: 'app-slide',
   templateUrl: './slide.component.html',

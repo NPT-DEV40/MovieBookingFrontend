@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent, canActivate: [authGuard] },
   {path: 'order',component: OrderComponent},
   {path: 'thanks', loadChildren: () => import('./pages/thanks-page/thanks-page.module').then(m => m.ThanksPageModule)},
+  {path: 'new-releases', loadChildren: () => import('./pages/new-releases-page/new-releases-page.module').then(m => m.NewReleasesPageModule)},
 ];
 
 @NgModule({
