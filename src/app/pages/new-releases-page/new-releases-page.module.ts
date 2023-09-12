@@ -9,6 +9,9 @@ import { SlideComponent } from 'src/app/features/slide/slide.component';
 import { HomePageModule } from '../home-page/home-page.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NewReleasesPageComponent } from './new-releases-page.component';
+import { HeadersModule } from 'src/app/features/headers/headers.module';
+import { FootersModule } from 'src/app/features/footers/footers.module';
+import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
 
 
 @NgModule({
@@ -19,7 +22,9 @@ import { NewReleasesPageComponent } from './new-releases-page.component';
     CommonModule,
     NewReleasesPageRoutingModule,
     FontAwesomeModule,
-    HomePageModule
+    HeadersModule,
+    FootersModule,
+    BuyTicketModule
   ],
   exports: [
   ]

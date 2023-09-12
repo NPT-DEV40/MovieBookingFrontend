@@ -7,6 +7,8 @@ import { MaterialModule } from 'src/app/materials/material.module';
 import { AdminMoviesCardComponent } from './admin-movies-card/admin-movies-card.component';
 import { AppModule } from 'src/app/app.module';
 import { HomePageModule } from 'src/app/pages/home-page/home-page.module';
+import { HeadersModule } from 'src/app/features/headers/headers.module';
+import { FootersModule } from 'src/app/features/footers/footers.module';
 
 
 
@@ -16,7 +18,8 @@ import { HomePageModule } from 'src/app/pages/home-page/home-page.module';
     CommonModule,
     AdminHomePageRoutingModule,
     MaterialModule,
-    HomePageModule
+    HeadersModule,
+    FootersModule
   ]
 })
 export class AdminHomePageModule { }

@@ -13,24 +13,23 @@ import { SlideComponent } from 'src/app/features/slide/slide.component';
 import { BuyTicketComponent } from 'src/app/features/buy-ticket/buy-ticket.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MaterialModule } from 'src/app/materials/material.module';
+import { HeadersModule } from 'src/app/features/headers/headers.module';
+import { FootersModule } from 'src/app/features/footers/footers.module';
+import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
 
 
 @NgModule({
   declarations: [ HomePageComponent, MovieComponent, 
-    HeaderComponent, FooterComponent, FilmComponent, CinemaComponent, SlideComponent, BuyTicketComponent],
+     FilmComponent, CinemaComponent, SlideComponent],
   imports: [
     CommonModule,
     HomePageRoutingModule,
     FontAwesomeModule,
     SlickCarouselModule,
-    MaterialModule
-  ],
-  exports: [
-    FooterComponent,
-    HeaderComponent,
-    SlideComponent,
-    FilmComponent,
-    BuyTicketComponent,
+    MaterialModule,
+    HeadersModule,
+    FootersModule,
+    BuyTicketModule
   ]
 })
 export class HomePageModule {

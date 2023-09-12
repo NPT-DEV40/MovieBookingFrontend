@@ -35,24 +35,12 @@ const httpOptions = {
 // }
 
 
-import { FilmComponent } from './features/film/film.component';
-import { CinemaComponent } from './features/cinema/cinema.component';
-import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
-import { TicketComponent } from './features/ticket/ticket.component';
-import { BuyTicketComponent } from './features/buy-ticket/buy-ticket.component';
-import { SlideComponent } from './features/slide/slide.component';
-import { NewReleasesPageComponent } from './pages/new-releases-page/new-releases-page.component';
-import { HomePageModule } from "./pages/home-page/home-page.module";
-
 @NgModule({
     declarations: [
         AppComponent,
         ChatComponent,
         AdminMovieEditPageComponent,
         OrderComponent,
-        ThanksPageComponent,
-        TicketComponent,
-        NewReleasesPageComponent,
     ],
     exports: [
         MatSelectModule,
@@ -83,7 +71,6 @@ import { HomePageModule } from "./pages/home-page/home-page.module";
         AppRoutingModule,
         FormsModule,
         MaterialModule,
-        HomePageModule,
         FontAwesomeModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideAuth(() => getAuth()),
