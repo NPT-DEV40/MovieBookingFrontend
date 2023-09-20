@@ -1,50 +1,44 @@
 <div class="home">
     <app-header></app-header>
     <div class="container">
+        <div class="manage_wrapper">
+            <div class="manage_films">
+                <a class="text_films">MANAGE FILMS </a>
+            </div>
+            <div class="manage_cinemas">
+                <a class="text_cinemas">MANAGE CINEMAS</a>
+            </div>
+            <div class="manage_users">
+                <a class="text_users">MANAGE USERS</a>
+            </div>
+            <div class="manage_tickets">
+                <a class="text_tickets">MANAGE TICKETS</a>
+            </div>
+        </div>
+
+        <div class="manage_action">
+            <div class="add_action">
+                <a class="add_text">ADD</a>
+            </div>
+            <div class="update_action">
+                <a class="update_text">UPDATE</a>
+            </div>
+            <div class="delete_action">
+                <a class="delete_text">DELETE</a>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg home__wrapper">
                 <div class="home__content">
-                    <div class="home__content-film">
-                        <div class="film-new-releases">
-                            <div class="list-film__title">
-                                <label for="film-group" class="name-film-group">NEW RELEASES</label>
-                                <label for="film-group" class="view-more">View more</label>
-                            </div>
-                            <div class="list-film">
-                                <app-admin-movies-card size="small"></app-admin-movies-card>
-                                <app-admin-movies-card size="small"></app-admin-movies-card>
-                                <app-admin-movies-card size="small"></app-admin-movies-card>
-                                <app-admin-movies-card size="small"></app-admin-movies-card>
-                            </div>
-                        </div>
-                        <div class="film-coming-soon">
-                            <div class="list-film__title">
-                                <label for="film-group" class="name-film-group">COMING SOON</label>
-                                <label for="film-group" class="view-more">View more</label>
-                            </div>
-                            <div class="list-film">
-                                <app-admin-movies-card size="small"></app-admin-movies-card>
-                                <app-admin-movies-card size="small"></app-admin-movies-card>
-                                <app-admin-movies-card size="small"></app-admin-movies-card>
-                                <app-admin-movies-card size="small"></app-admin-movies-card>
-                            </div>
-                        </div>
+                    <div class="home__content-film grid-container">
+                        <app-admin-movies-card class="grid-item" size="big"
+                            *ngFor="let movie of movieList"></app-admin-movies-card>
                     </div>
-                    <div class="film-history">
-                        <div class="list-film__title">
-                            <label for="film-group" class="name-film-group">HISTORY</label>
-                        </div>
-                        <div class="list-film">
-                            <app-admin-movies-card size="small"></app-admin-movies-card>
-                            <app-admin-movies-card size="small"></app-admin-movies-card>
-                            <app-admin-movies-card size="small"></app-admin-movies-card>
-                            <app-admin-movies-card size="small"></app-admin-movies-card>
-                            <app-admin-movies-card size="small"></app-admin-movies-card>
-                            <app-admin-movies-card size="small"></app-admin-movies-card>
-                            <!-- <div class="header__action-icon-wrapper"><fa-icon [icon]="faCircleChevronRight" class="header__action-film" ></fa-icon></div> -->
-                    </div>
-                </div>      
+                </div>
             </div>
+        </div>
+        <div class="arrow-container">
+            <div class="arrow"></div>
         </div>
     </div>
     <app-footer></app-footer>

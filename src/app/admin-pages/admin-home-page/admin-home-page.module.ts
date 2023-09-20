@@ -9,11 +9,12 @@ import { AppModule } from 'src/app/app.module';
 import { HomePageModule } from 'src/app/pages/home-page/home-page.module';
 import { HeadersModule } from 'src/app/features/headers/headers.module';
 import { FootersModule } from 'src/app/features/footers/footers.module';
+import { AdminMovieEditPageComponent } from '../admin-movie-edit-page/admin-movie-edit-page.component';
 
 
 
 @NgModule({
-  declarations: [AdminHomePageComponent, AdminMoviesListComponent, AdminMoviesCardComponent],
+  declarations: [AdminHomePageComponent, AdminMoviesListComponent, AdminMoviesCardComponent, AdminMovieEditPageComponent],
   imports: [
     CommonModule,
     AdminHomePageRoutingModule,
