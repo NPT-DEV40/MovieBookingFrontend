@@ -17,7 +17,7 @@ import { SlideModule } from 'src/app/features/slide/slide.module';
 
 @NgModule({
   declarations: [
-    NewReleasesPageComponent, SlideComponent
+    NewReleasesPageComponent
   ],
   imports: [
     CommonModule,
