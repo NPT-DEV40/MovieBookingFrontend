@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '@stomp/stompjs';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { WebsocketService } from 'src/app/core/services/websocket.service';
+import { UserService } from '../users/services/user.service';
+import { MovieService } from '../movies/services/movie.service';
 
 @Component({
   selector: 'app-chat',
@@ -11,8 +14,12 @@ export class ChatComponent implements OnInit {
   webSocketService!: WebsocketService;
   greeting: any;
   name!: string;
+  userService!: UserService;
+
+  constructor(private movie: MovieService) { }
+
   ngOnInit() {
-    this.webSocketService = new WebsocketService(new ChatComponent());
+    this.webSocketService = new WebsocketService();
   }
 
   connect(){
@@ -31,7 +38,10 @@ export class ChatComponent implements OnInit {
     this.greeting = message;
   }
 
-  
-  
+  allUser() {
+    this.movie.getAllUsers().subscribe((response: any) => {
+      console.log(response);
+    });
+  }  
 }
 

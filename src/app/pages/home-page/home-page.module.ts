@@ -2,25 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { HomePageRoutingModule } from './home-page-routing.module';
-import { HeaderComponent } from 'src/app/features/headers/components/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomePageComponent } from './home-page.component';
-import { FooterComponent } from 'src/app/features/footers/components/footer.component';
 import { MovieComponent } from 'src/app/features/movies/components/movie/movie.component';
 import { FilmComponent } from 'src/app/features/film/film.component';
 import { CinemaComponent } from 'src/app/features/cinema/cinema.component';
 import { SlideComponent } from 'src/app/features/slide/slide.component';
-import { BuyTicketComponent } from 'src/app/features/buy-ticket/buy-ticket.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MaterialModule } from 'src/app/materials/material.module';
 import { HeadersModule } from 'src/app/features/headers/headers.module';
 import { FootersModule } from 'src/app/features/footers/footers.module';
 import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
+import { SlideModule } from 'src/app/features/slide/slide.module';
 
 
 @NgModule({
   declarations: [ HomePageComponent, MovieComponent, 
-     FilmComponent, CinemaComponent, SlideComponent],
+     FilmComponent, CinemaComponent],
   imports: [
     CommonModule,
     HomePageRoutingModule,
@@ -29,7 +27,8 @@ import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
     MaterialModule,
     HeadersModule,
     FootersModule,
-    BuyTicketModule
+    BuyTicketModule,
+    SlideModule
   ]
 })
 export class HomePageModule {

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChatComponent } from './features/chat/chat.component';
 import { OrderComponent } from './features/order/components/order.component';
 import { authGuard } from './core/guards/auth.guard';
+import { AdminChatPageComponent } from './admin-pages/admin-chat-page/admin-chat-page.component';
 
 
 const routes: Routes = [
@@ -13,8 +14,10 @@ const routes: Routes = [
   { path: 'admin', loadChildren: () => import('./admin-pages/admin-home-page/admin-home-page.module').then(m => m.AdminHomePageModule) },
   { path: 'chat', component: ChatComponent, canActivate: [authGuard] },
   {path: 'order',component: OrderComponent},
+  {path: 'admin-chat', component: AdminChatPageComponent},
   {path: 'thanks', loadChildren: () => import('./pages/thanks-page/thanks-page.module').then(m => m.ThanksPageModule)},
   {path: 'new-releases', loadChildren: () => import('./pages/new-releases-page/new-releases-page.module').then(m => m.NewReleasesPageModule)},
+  {path: 'movie', loadChildren: () => import('./admin-pages/admin-movie-edit-page/admin-movie-edit-page.component').then(m => m.AdminMovieEditPageComponent)},
 ];
 
 @NgModule({

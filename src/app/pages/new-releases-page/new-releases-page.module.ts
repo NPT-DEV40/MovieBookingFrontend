@@ -12,6 +12,7 @@ import { NewReleasesPageComponent } from './new-releases-page.component';
 import { HeadersModule } from 'src/app/features/headers/headers.module';
 import { FootersModule } from 'src/app/features/footers/footers.module';
 import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
+import { SlideModule } from 'src/app/features/slide/slide.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
     FontAwesomeModule,
     HeadersModule,
     FootersModule,
-    BuyTicketModule
+    BuyTicketModule,
+    SlideModule
   ],
   exports: [
   ]

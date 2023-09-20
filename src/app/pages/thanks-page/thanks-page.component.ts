@@ -5,7 +5,7 @@ import { faCircleCheck, faCircleChevronLeft, faCircleChevronRight} from '@fortaw
 @Component({
   selector: 'app-thanks-page',
   templateUrl: './thanks-page.component.html',
-  styleUrls: ['./thanks-page.component.css']
+  styleUrls: ['./thanks-page.component.css'],
 })
 export class ThanksPageComponent {
   faCircleCheck = faCircleCheck;

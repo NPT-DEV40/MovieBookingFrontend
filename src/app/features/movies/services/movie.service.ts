@@ -32,6 +32,10 @@ export class MovieService {
     return this.http.delete(environment.api + `movie/delete-movie/${id}`);
   }
 
+  getAllUsers() {
+    return this.http.get(environment.api + 'auth/users', httpOptions);
+  }
+
   getAllMovies() {
     return this.http.get(environment.api + 'movie/all-movies', httpOptions)
       .pipe(map((response: any) => {

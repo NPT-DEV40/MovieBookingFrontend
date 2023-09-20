@@ -15,9 +15,9 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-import { AdminMovieEditPageComponent } from './admin-pages/admin-movie-edit-page/admin-movie-edit-page.component';
 import { OrderComponent } from './features/order/components/order.component';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { AdminChatPageComponent } from './admin-pages/admin-chat-page/admin-chat-page.component';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -39,8 +39,8 @@ const httpOptions = {
     declarations: [
         AppComponent,
         ChatComponent,
-        AdminMovieEditPageComponent,
         OrderComponent,
+        AdminChatPageComponent,
     ],
     exports: [
         MatSelectModule,
