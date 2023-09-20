@@ -18,6 +18,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { OrderComponent } from './features/order/components/order.component';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { AdminChatPageComponent } from './admin-pages/admin-chat-page/admin-chat-page.component';
+import { IconDownCustomComponent } from './features/icon-down-custom/icon-down-custom.component';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -40,7 +41,7 @@ const httpOptions = {
         AppComponent,
         ChatComponent,
         OrderComponent,
-        AdminChatPageComponent,
+        AdminChatPageComponent
     ],
     exports: [
         MatSelectModule,

@@ -27,3 +27,7 @@
 .new-release__content{
     
 }   
+
+.list-film{
+    display: flex;
+}

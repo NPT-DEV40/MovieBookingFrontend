@@ -1,0 +1,28 @@
+.icon__wapper{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    max-width: 60px;
+    max-height: 75px;
+}
+
+.icon__top{
+    position: absolute;
+    top: 0;
+    margin: auto;
+    width: 30px;
+    flex-shrink: 0;
+}
+
+.icon__down{
+    display: flex;
+    margin: auto;
+    margin-top: 15px;
+    width: 60px;
+    flex-shrink: 0;
+}
