@@ -9,6 +9,6 @@ import * as classNames from 'classnames';
 })
 
 export class SlideComponent {
-  @Input() size : string |undefined;
+  @Input() size : string | undefined;
   classNames = classNames;
 }

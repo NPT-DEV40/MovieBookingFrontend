@@ -14,11 +14,12 @@ import { HeadersModule } from 'src/app/features/headers/headers.module';
 import { FootersModule } from 'src/app/features/footers/footers.module';
 import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
 import { SlideModule } from 'src/app/features/slide/slide.module';
+import { CinemaModule } from 'src/app/features/cinema/cinema.module';
+import { FilmModule } from 'src/app/features/film/film.module';
 
 
 @NgModule({
-  declarations: [ HomePageComponent, MovieComponent, 
-     FilmComponent, CinemaComponent],
+  declarations: [ HomePageComponent, MovieComponent, ],
   imports: [
     CommonModule,
     HomePageRoutingModule,
@@ -28,7 +29,9 @@ import { SlideModule } from 'src/app/features/slide/slide.module';
     HeadersModule,
     FootersModule,
     BuyTicketModule,
-    SlideModule
+    SlideModule,
+    CinemaModule,
+    FilmModule
   ]
 })
 export class HomePageModule {
