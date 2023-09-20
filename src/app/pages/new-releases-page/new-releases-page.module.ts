@@ -16,7 +16,7 @@ import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
 
 @NgModule({
   declarations: [
-    NewReleasesPageComponent,
+    NewReleasesPageComponent, SlideComponent
   ],
   imports: [
     CommonModule,

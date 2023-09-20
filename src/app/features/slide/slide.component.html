@@ -1,27 +1,5 @@
-<!-- <ngx-slick-carousel class="carousel" 
-#slickModal="slick-carousel" 
-[config]="slideConfig" >
-<div ngxSlickItem *ngFor="let slide of slides" class="slide">
-<img src="{{ slide.img }}" alt="" width="1440" height="377">
-</div>
-</ngx-slick-carousel> -->
-
-<!-- <section class="container">
-    <div class="slider-wrapper">
-        <div class="slider">
-            <img id="slide-1" src="assets/images/slide1.jpg" alt="slide 1">
-            <img id="slide-2" src="assets/images/slide2.jpg" alt="slide 2">
-            <img id="slide-3" src="assets/images/slide3.jpg" alt="slide 3">
-        </div>
-        <div class="slider-nav">
-            <a href="#slide-1"></a>
-            <a href="#slide-2"></a>
-            <a href="#slide-3"></a>
-        </div>
-    </div>
-</section> -->
-
-<div class="slider">
+<div [ngClass]="classNames({'slider=-small':size === 'small','slider-big':size === 'big'})" class="slider" >
+    <span class="slider__span">Book Now And Get A 10% Discount</span>
     <div class="images">
         <input type="radio" name="slide" id="img1" checked>
         <input type="radio" name="slide" id="img2">

@@ -1,4 +1,4 @@
-.home{ 
+.home__wrapper{ 
     display: flex;
     flex-direction: column; 
     background-color: var(--black); 
@@ -20,7 +20,7 @@
     justify-content: center;
 }
 
-.home__wrapper{
+.home{
     display: flex;
     flex-direction: column;
     justify-content: center;
