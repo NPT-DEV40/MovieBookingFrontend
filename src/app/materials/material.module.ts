@@ -10,6 +10,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatListModule} from '@angular/material/list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatMenuModule} from '@angular/material/menu';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 
 @NgModule({
@@ -28,7 +31,10 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule { }

@@ -1,45 +1,38 @@
-<div class="home">
-    <app-header></app-header>
-    <div class="container">
-        <div class="manage_wrapper">
-            <div class="manage_films">
-                <a class="text_films">MANAGE FILMS </a>
-            </div>
-            <div class="manage_cinemas">
-                <a class="text_cinemas">MANAGE CINEMAS</a>
-            </div>
-            <div class="manage_users">
-                <a class="text_users">MANAGE USERS</a>
-            </div>
-            <div class="manage_tickets">
-                <a class="text_tickets">MANAGE TICKETS</a>
-            </div>
+<div class="container">
+    <div class="manage_wrapper">
+        <div class="manage_films">
+            <a href="#" class="text_films">MANAGE FILMS </a>
         </div>
-
-        <div class="manage_action">
-            <div class="add_action">
-                <a class="add_text">ADD</a>
-            </div>
-            <div class="update_action">
-                <a class="update_text">UPDATE</a>
-            </div>
-            <div class="delete_action">
-                <a class="delete_text">DELETE</a>
-            </div>
+        <div class="manage_cinemas">
+            <a href="#" class="text_cinemas">MANAGE CINEMAS</a>
         </div>
-        <div class="row">
-            <div class="col-lg home__wrapper">
-                <div class="home__content">
-                    <div class="home__content-film grid-container">
-                        <app-admin-movies-card class="grid-item" size="big"
-                            *ngFor="let movie of movieList"></app-admin-movies-card>
-                    </div>
-                </div>
-            </div>
+        <div class="manage_users">
+            <a href="#" class="text_users">MANAGE USERS</a>
         </div>
-        <div class="arrow-container">
-            <div class="arrow"></div>
+        <div class="manage_tickets">
+            <a href="#" class="text_tickets">MANAGE TICKETS</a>
         </div>
     </div>
-    <app-footer></app-footer>
+
+    <div class="manage_action">
+        <div class="add_action">
+            <a href="#" class="add_text">ADD</a>
+        </div>
+        <div class="update_action">
+            <a href="#" class="update_text">UPDATE</a>
+        </div>
+        <div class="delete_action">
+            <a href="#" class="delete_text">DELETE</a>
+        </div>
+    </div>
+    <div class="col-lg home__wrapper">
+        <div class="home__content">
+            <div class="grid-container" appAdminMoviesList (scrollingFinished)="onScrollingFinished()">
+                <ng-container *ngFor="let item of categories">
+                    <app-admin-movies-card size="big" class="grid-item"></app-admin-movies-card>
+                </ng-container>
+            </div>
+            <app-icon-down-custom class="arrow-down"></app-icon-down-custom>
+        </div>
+    </div>
 </div>

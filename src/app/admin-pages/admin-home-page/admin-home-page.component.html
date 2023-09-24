@@ -1,3 +1,5 @@
-
-<app-admin-movies-list></app-admin-movies-list>
-  
+<div class="home">
+    <app-header></app-header>
+    <app-admin-movies-list [categories]="categories$ | async" (scrollingFinished)="onScrollingFinished()"></app-admin-movies-list>
+    <app-footer></app-footer>
+</div>

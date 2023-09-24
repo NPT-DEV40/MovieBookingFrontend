@@ -1,4 +1,18 @@
-.icon__wapper{
+@keyframes jumpInfinite {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 20px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.icon__wapper {
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -11,7 +25,7 @@
     max-height: 75px;
 }
 
-.icon__top{
+.icon__top {
     position: absolute;
     top: 0;
     margin: auto;
@@ -19,10 +33,14 @@
     flex-shrink: 0;
 }
 
-.icon__down{
+.icon__down {
     display: flex;
     margin: auto;
     margin-top: 15px;
     width: 60px;
     flex-shrink: 0;
+}
+
+.arrow {
+    animation: jumpInfinite 1.5s infinite;
 }
