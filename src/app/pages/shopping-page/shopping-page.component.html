@@ -1,0 +1,55 @@
+<div class="shopping__wrapper">
+    <app-header></app-header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg shopping">
+                <div class="shopping__content">
+                    <div class="shopping__content--booking-details">
+                        <h3 class="shopping__content--booking-details__title">Booking Details</h3>
+                        <app-ticket size="big"></app-ticket>
+                    </div>
+                    <div class="shopping__content--payment-details">
+                        <h3 class="shopping__content--payment-details__title">Payment Details</h3>
+                        <div class="shopping__content--payment-details--wrapper">
+                            <ul class="shopping__content--payment-details__total-price">
+                                <li class="shopping__content--payment-details__price">
+                                    <span  class="shopping__content--payment-details--title">3X Regular Tickets</span>
+                                    <div class="shopping__content--payment-details--value">
+                                        <span class="shopping__content--payment-details--amount">3x</span>
+                                        <span class="shopping__content--payment-details--cash">150</span>
+                                        <span class="shopping__content--payment-details--currency-unit">EGP</span>
+                                    </div>
+
+                                </li>
+                                <li class="shopping__content--payment-details__discount">
+                                    <span  class="shopping__content--payment-details--title">Discount 10%</span>
+                                    <div class="shopping__content--payment-details--value">
+                                        <span class="shopping__content--payment-details--cash">45</span>
+                                        <span class="shopping__content--payment-details--currency-unit">EGP</span>
+                                    </div>
+                                </li>
+                                <li class="shopping__content--payment-details__total">
+                                        <span  class="shopping__content--payment-details--title">Total Price</span>
+                                    <div class="shopping__content--payment-details--value">
+                                        <span class="shopping__content--payment-details--cash">405</span>
+                                        <span class="shopping__content--payment-details--currency-unit">EGP</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="shopping__content--payment-details__payment-btn">
+                                Payment
+                                <fa-icon [icon]="faCircleChevronDown" class="icon_down" ></fa-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <button class="shopping__content--confirm-btn">
+                        CONFIRM CHECKOUT
+                        <fa-icon [icon]="faCircleChevronRight" class="icon_right" ></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    <app-button-support></app-button-support>
+    </div>
+    <app-footer></app-footer>
+</div>

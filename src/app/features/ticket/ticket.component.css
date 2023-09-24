@@ -3,6 +3,9 @@
     justify-content: space-around;
     align-items: center;
     height: auto;
+    border-radius: 14px;
+    border: 6px solid var(--primary-color-1);
+    margin: auto;
 }
 
 .ticket-small{
@@ -22,7 +25,7 @@
 .information{
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 .top{

@@ -1,0 +1,16 @@
+.button-wrapper{
+    display: flex;
+    float: right;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color-1);
+    border-radius: 50%;
+    border: none;
+    margin-bottom: 40px;
+}
+
+.button-wrapper img{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

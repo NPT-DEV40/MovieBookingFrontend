@@ -1,0 +1,184 @@
+.shopping__wrapper{
+    display: flex;
+    flex-direction: column; 
+    background-color: var(--black); 
+    position: relative;
+    left: 0;
+    clear: both;
+}
+
+.container{
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 180px;
+    margin-top: 120px;
+}
+
+.shopping{
+    display: flex;
+    flex-direction: row;
+}
+
+.shopping__content{
+    margin: auto;
+}
+
+.shopping__content--booking-details{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.shopping__content--booking-details__title, .shopping__content--payment-details__title{
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.97px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.shopping__content--payment-details{
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.shopping__content--payment-details--wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 14px;
+    border: 6px solid var(--primary-color-1);
+}
+
+.shopping__content--payment-details__total-price{
+    list-style: none;
+    margin: 20px 30px;
+}
+
+.shopping__content--payment-details__price, .shopping__content--payment-details__discount, .shopping__content--payment-details__total{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.shopping__content--payment-details--value{
+    display: flex;
+}
+
+.shopping__content--payment-details--amount, .shopping__content--payment-details--cash{
+    padding-right: 10px;
+}
+
+.shopping__content--payment-details--currency-unit{
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.97px;
+}  
+
+.shopping__content--payment-details__price > .shopping__content--payment-details--title, .shopping__content--payment-details__price > .shopping__content--payment-details--value > .shopping__content--payment-details--amount{
+    color: var(--white);
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.97px;
+}
+
+.shopping__content--payment-details__price > .shopping__content--payment-details--value > .shopping__content--payment-details--cash,
+.shopping__content--payment-details__total > .shopping__content--payment-details--value > .shopping__content--payment-details--cash{
+    color: var(--primary-color-1);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.97px;
+}
+
+.shopping__content--payment-details__discount > .shopping__content--payment-details--title{
+    color: var(--green);
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.97px;
+}
+
+.shopping__content--payment-details__discount > .shopping__content--payment-details--value > .shopping__content--payment-details--cash{
+    color: var(--green);
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.97px;
+}
+
+.shopping__content--payment-details__total > .shopping__content--payment-details--title{
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.97px;
+}
+
+.shopping__content--payment-details__payment-btn{
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    border-radius: 14px;
+    border: 5px solid var(--primary-color-1);
+    background: var(--white);
+    color: var(--black);
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+
+.icon_down {
+    position: absolute;
+    font-size: 5rem;
+    right: -10px;
+    z-index: 1;
+    background-color: var(--white);
+    color: var(--primary-color-1);
+    border-radius: 50%;
+    margin: auto;
+}
+
+.shopping__content--confirm-btn{
+    margin: auto ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 75px;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 24px; 
+    letter-spacing: 0.5px;
+    border-radius: 14px;
+    border: 2px solid var(--primary-color-1);
+    background: var(--primary-color-1);
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.icon_right{
+    font-size: 4rem;
+    margin-left: 10px;
+}

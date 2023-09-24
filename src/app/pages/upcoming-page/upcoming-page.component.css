@@ -1,4 +1,4 @@
-.new-release__wrapper{
+.upcoming__wrapper{
     display: flex;
     flex-direction: column; 
     background-color: var(--black); 
@@ -16,12 +16,12 @@
     margin-bottom: 180px;
 }
 
-.new-release{
+.upcoming{
     display: flex;
     flex-direction: column;
 }
 
-.new-release__content{
+.upcoming__content{
     
 }   
 

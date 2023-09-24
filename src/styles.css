@@ -7,7 +7,7 @@
   --primary-color-4: rgba(217, 217, 217, 0.37);
   --white: white;
   --black: black;
-  --green:#6ED87A;
+  --green:#1ED900;
   --background-color: #000;
   --manage-color: #FF7A00;
 }
@@ -27,6 +27,7 @@ body {
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   background-color: var(--background-color);
+  color: var(--white);
 }
 
 a{

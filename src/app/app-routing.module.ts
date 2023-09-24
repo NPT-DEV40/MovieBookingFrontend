@@ -1,3 +1,4 @@
+import { UpcomingPageComponent } from './pages/upcoming-page/upcoming-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChatComponent } from './features/chat/chat.component';
@@ -17,6 +18,9 @@ const routes: Routes = [
   {path: 'admin-chat', component: AdminChatPageComponent},
   {path: 'thanks', loadChildren: () => import('./pages/thanks-page/thanks-page.module').then(m => m.ThanksPageModule)},
   {path: 'new-releases', loadChildren: () => import('./pages/new-releases-page/new-releases-page.module').then(m => m.NewReleasesPageModule)},
+  {path: 'upcoming', loadChildren: () => import('./pages/upcoming-page/upcoming-page.module').then(m => m.UpcomingPageModule)},
+  {path: 'film-detail', loadChildren: () => import('./pages/film-detail-page/film-detail-page.module').then(m => m.FilmDetailPageModule)},
+  {path: 'shopping', loadChildren: () => import('./pages/shopping-page/shopping-page.module').then(m => m.ShoppingPageModule)},
   {path: 'movie', loadChildren: () => import('./admin-pages/admin-movie-edit-page/admin-movie-edit-page.component').then(m => m.AdminMovieEditPageComponent)},
 ];
 
