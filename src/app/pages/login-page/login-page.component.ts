@@ -1,5 +1,5 @@
 import { FacebookLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
-import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CredentialResponse } from 'google-one-tap';
@@ -7,6 +7,7 @@ import { first, pipe } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AlertService } from 'src/app/features/alert/services/alert.service';
 import { environment } from 'src/environments/environment';
+import { faEyeSlash,faEye } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login-page',
@@ -14,10 +15,18 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  @ViewChild('iconHide', { static: true }) iconHide!: ElementRef;
+  @ViewChild('iconShow', { static: true }) iconShow!: ElementRef;
+  @ViewChild('passwordInput', { static: true }) passwordInput!: ElementRef;  
 
   loginForm!: FormGroup;
   loading = false;
   submitted = false;
+  faEyeSlash = faEyeSlash;
+  faEye = faEye;
+
+  isIconHideVisible = true;
+  isIconShowVisible = false;
 
   googleClientId = environment.googleId;
 
@@ -25,6 +34,8 @@ export class LoginPageComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private elRef: ElementRef, 
+    private renderer: Renderer2,
     private route: ActivatedRoute,
     private _ngZone: NgZone,
     private router: Router,
@@ -84,6 +95,21 @@ export class LoginPageComponent implements OnInit {
     });
   }
 
+  handleHide() {
+    const passwordType = this.passwordInput.nativeElement.type === 'password' ? 'text' : 'password';
+    this.passwordInput.nativeElement.type = passwordType;
+
+    this.isIconHideVisible = false;
+    this.isIconShowVisible = true;
+  }
+
+  handleShow() {
+    const passwordType = this.passwordInput.nativeElement.type === 'text' ? 'password' : 'text';
+    this.passwordInput.nativeElement.type = passwordType;
+
+    this.isIconHideVisible = true;
+    this.isIconShowVisible = false;
+  }
 
 
   get f() {

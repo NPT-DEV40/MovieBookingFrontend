@@ -14,6 +14,7 @@ import { BuyTicketModule } from 'src/app/features/buy-ticket/buy-ticket.module';
 import { SlideModule } from 'src/app/features/slide/slide.module';
 import { CinemaModule } from 'src/app/features/cinema/cinema.module';
 import { FilmModule } from 'src/app/features/film/film.module';
+import { ChatBoxModule } from 'src/app/features/chat-box/chat-box.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FilmModule } from 'src/app/features/film/film.module';
     SlideModule,
     CinemaModule,
     FilmModule,
-    ButtonSupportModule
+    ButtonSupportModule,
+    ChatBoxModule
   ]
 })
 export class HomePageModule {

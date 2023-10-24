@@ -18,6 +18,13 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { OrderComponent } from './features/order/components/order.component';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { AdminChatPageComponent } from './admin-pages/admin-chat-page/admin-chat-page.component';
+import { HistoryPageComponent } from './pages/history-page/history-page.component';
+import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
+import { OtpPageComponent } from './pages/otp-page/otp-page.component';
+import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { ChatBoxComponent } from './features/chat-box/chat-box.component';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -40,7 +47,7 @@ const httpOptions = {
         AppComponent,
         ChatComponent,
         OrderComponent,
-        AdminChatPageComponent
+        AdminChatPageComponent,
     ],
     exports: [
         MatSelectModule,

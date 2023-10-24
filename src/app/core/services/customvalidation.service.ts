@@ -40,4 +40,25 @@ export class CustomvalidationService {
       return true;
     }
   }
+
+  MatchOTP(otp: string) {
+    return (formGroup: FormGroup) => {
+      const passwordControl = formGroup.controls[otp]; 
+
+      // if(!passwordControl || !confirmPasswordControl) {
+      //   return null;
+      // }
+
+      // if(confirmPasswordControl.errors && !confirmPasswordControl.errors['passwordMisMatch']) {
+      //   return null;
+      // }
+
+      // if(passwordControl.value !== confirmPasswordControl.value) {
+      //   confirmPasswordControl.setErrors({passwordMisMatch: true});
+      // } else {
+      //   confirmPasswordControl.setErrors(null);
+      // }
+      return true;
+    }
+  }
 }

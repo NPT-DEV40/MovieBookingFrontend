@@ -1,0 +1,22 @@
+<div class="otp">
+    <app-header></app-header>
+    <div class="otp__container">
+        <div class="otp__form">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <img src="assets/images/logo_white.png" alt="logo" class="otp__form--logo">
+                <div class="mb-3">
+                    <label class="form-label">Please enter the 4-digit verification code that was sent. </label>
+                    <div class="mb-3__input">
+                        <input type="otp" class="form-control" formControlName="otp" [ngClass] = "{'is-invalid': submitted && f['otp']?.errors}" placeholder="OTP">
+                    </div>
+                    <div *ngIf="(f.otp?.touched || submitted) && f.otp?.errors" class="invalid-feedback">
+                        <div *ngIf="f.otp?.errors?.['required']">OTP is required</div>
+                        <div *ngIf="f.otp?.errors?.['email']">Wrong type</div>
+                    </div>
+                </div>
+                <button type="submit" class="OTP__submit-btn">Submit</button>
+            </form> 
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

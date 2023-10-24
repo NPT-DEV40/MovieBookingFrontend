@@ -17,10 +17,15 @@
 }
 
 .header__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
     color: var(--primary-color-1);
     font-size: 1.6rem;
     font-weight: 900;
     letter-spacing: 8.8px;
+    cursor: pointer;
 }
 
 .header__search{

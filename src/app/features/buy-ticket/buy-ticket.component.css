@@ -1,10 +1,8 @@
 .buy_ticket{
     max-width: 60%;
-    margin: auto;
-    margin-top: 20px;
+    margin: 20px auto 40px auto;
     border-radius: 25px;
     border: 4px solid var(--primary-color-1);
-    margin-bottom: 40px;
 }
 
 .buy__ticket-top, .buy__ticket-bottom{
@@ -64,16 +62,15 @@
     background-color: var(--primary-color-1);
     border-radius: 14px;
     border: 2px solid var(--primary-color-1);
-    min-width: 160px;
-    min-height: 45px;
+    width: 280px;
+    height: 50px;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 0.5px;
     padding: 0 10px;
-    margin: auto;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin: 40px auto;
+    color: var(--black);
 }
 
 .icon_right{

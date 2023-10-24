@@ -1,4 +1,4 @@
-.home__wrapper{ 
+.home{ 
     display: flex;
     flex-direction: column; 
     background-color: var(--black); 
@@ -8,60 +8,59 @@
 }
 
 .container {
-    flex:1;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 180px;
-}
-
-.row{
-    justify-content: center;
-}
-
-.home{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
+    margin-bottom: 180px;
 }
 
 .home__content{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 
 .top{
-    margin: auto;
     display: flex;
-    transform: translateX(-5%);
     align-items: center;
+    justify-content: space-between;
 }
 
 .home__content-film{
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
-    margin: auto;
+    margin: auto 40px 40px 40px;
+    flex: 0 0 65%;
 }
 
-.film-new-releases, .film-history{
+.film-new-releases, .film-coming-soon{
     display: block;
     flex-direction: column;
 }
 
 .film-history{
+    display: flex;
+    flex-direction: column;
     margin-bottom: 40px;
-    transform: translateX(-5%);
+    margin-left: 40px;
 }
 
 .film-history .list-film{
+    width: 100%;
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: space-between;
+}
+
+.film-history .list-film > * {
+    flex-grow: 1; /* Mỗi phần tử con sẽ chiếm một phần bằng nhau của .list-film */
+}
+
+.film-history .list-film > .icon-wrapper {
+    flex-grow: 0; /* Phần tử icon sẽ không phình to ra */
 }
 
 .list-film__title{
@@ -93,23 +92,14 @@
     min-width: 700px;
 }
 
-.film-coming-soon{
-    display: block;
-    flex-direction: column;
-}
-
 .home__content-system-cinema{
     display: flex;
     flex-direction: column;
-    margin-left: 40px; 
     text-align: left;
     float: left;
-    justify-content: stretch;
-    align-items: flex-start;
-    box-sizing: border-box;
-    display: grid;
     justify-items: left;
     margin-top: -20px;
+    flex: 1;
 }
 
 .system-cinema__title{

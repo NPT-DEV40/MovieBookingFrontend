@@ -1,51 +1,16 @@
-<div class="home__wrapper">
+<div class="home">
     <app-header></app-header>
     <app-slide size="small"></app-slide>
     <div class="container">
-        <div class="row">
-            <div class="col-lg home">
-                <div class="home__content">
-                    <app-buy-ticket></app-buy-ticket>
-                    <div class="top">
-                        <div class="home__content-film">
-                            <div class="film-new-releases">
-                                <div class="list-film__title">
-                                    <label for="film-group" class="name-film-group">NEW RELEASES</label>
-                                    <label for="film-group" class="view-more">View more</label>
-                                </div>
-                                <div class="list-film">
-                                    <app-film size="small"></app-film>
-                                    <app-film size="small"></app-film>
-                                    <app-film size="small"></app-film>
-                                    <app-film size="small"></app-film>
-                                    <app-film size="small"></app-film>
-                                </div>
-                            </div>
-                            <div class="film-coming-soon">
-                                <div class="list-film__title">
-                                    <label for="film-group" class="name-film-group">COMING SOON</label>
-                                    <label for="film-group" class="view-more">View more</label>
-                                </div>
-                                <div class="list-film">
-                                    <app-film size="small"></app-film>
-                                    <app-film size="small"></app-film>
-                                    <app-film size="small"></app-film>
-                                    <app-film size="small"></app-film>
-                                    <app-film size="small"></app-film>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home__content-system-cinema">
-                            <label for="system-cinma__title" class="system-cinema__title">CINEMA SYSTEM</label>
-                            <app-cinema size="small"></app-cinema>
-                            <app-cinema size="small"></app-cinema>
-                            <app-cinema size="small"></app-cinema>
-                            <app-cinema size="small"></app-cinema>
-                        </div>
-                    </div>
-                    <div class="film-history">
+        <div class="home__content">
+            <app-buy-ticket></app-buy-ticket>
+            <div class="top">
+                <div class="home__content-film">
+                    <div class="film-new-releases">
                         <div class="list-film__title">
-                            <label for="film-group" class="name-film-group">HISTORY</label>
+                            <label for="film-group" class="name-film-group">NEW RELEASES</label>
+                            <a routerLink="/new-releases" class="view-more">View more</a>
+                            <!-- <a routerLink="/pageB" [queryParams]="{id: someId}">Chuyển đến trang B</a> -->
                         </div>
                         <div class="list-film">
                             <app-film size="small"></app-film>
@@ -53,13 +18,47 @@
                             <app-film size="small"></app-film>
                             <app-film size="small"></app-film>
                             <app-film size="small"></app-film>
+                        </div>
+                    </div>
+                    <div class="film-coming-soon">
+                        <div class="list-film__title">
+                            <label for="film-group" class="name-film-group">COMING SOON</label>
+                            <a routerLink="/upcoming" class="view-more">View more</a>
+                        </div>
+                        <div class="list-film">
                             <app-film size="small"></app-film>
-                            <div class="icon-wrapper"><fa-icon [icon]="faCircleChevronRight" class="icon-right" ></fa-icon></div> 
-                    </div> 
-                    </div>      
+                            <app-film size="small"></app-film>
+                            <app-film size="small"></app-film>
+                            <app-film size="small"></app-film>
+                            <app-film size="small"></app-film>
+                        </div>
+                    </div>
+                </div>
+                <div class="home__content-system-cinema">
+                    <label for="system-cinma__title" class="system-cinema__title">CINEMA SYSTEM</label>
+                    <app-cinema size="small"></app-cinema>
+                    <app-cinema size="small"></app-cinema>
+                    <app-cinema size="small"></app-cinema>
+                    <app-cinema size="small"></app-cinema>
+                </div>
             </div>
+            <div class="film-history">
+                <div class="list-film__title">
+                    <label for="film-group" class="name-film-group">HISTORY</label>
+                </div>
+                <div class="list-film">
+                    <app-film size="small"></app-film>
+                    <app-film size="small"></app-film>
+                    <app-film size="small"></app-film>
+                    <app-film size="small"></app-film>
+                    <app-film size="small"></app-film>
+                    <app-film size="small"></app-film>
+                    <a routerLink="/history" class="icon-wrapper"><fa-icon [icon]="faCircleChevronRight" class="icon-right" ></fa-icon></a> 
+                </div> 
+            </div>      
         </div>
-        <app-button-support></app-button-support>
+        <app-chat-box *ngIf="showChatBox"></app-chat-box>
+        <app-button-support [showChatBox] ="showChatBox"></app-button-support>
     </div>
     <app-footer></app-footer>
 </div>

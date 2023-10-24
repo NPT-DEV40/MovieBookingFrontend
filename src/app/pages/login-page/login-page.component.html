@@ -1,28 +1,42 @@
-<div class="card">
-    <h4>Login</h4>
-    <div class="card-header">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="mb-3">
-                <label class="form-label">User Name</label>
-                <input type="text" class="form-control" formControlName="userName"
-                    [ngClass]="{'is-invalid': submitted && f['userName'].errors}">
-                <div *ngIf="(f['userName'].touched|| submitted) && f['userName'].errors" class="invalid-feedback">
-                    <div *ngIf="f['userName'].errors?.['required']">User Name is required</div>
+<div class="login">
+    <app-header></app-header>
+    <div class="login__container">
+        <div class="login__form">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <img src="assets/images/logo_white.png" alt="logo" class="login__form--logo">
+                <div class="form__nav">
+                    <a routerLink="/login" class="nav__sign-in">Sign in</a>
+                    <a routerLink="/register" class="nav__sign-up">Sign up</a>
                 </div>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" formControlName="password"
-                    [ngClass]="{'is-invalid' : submitted && f['password'].errors}">
-                <div *ngIf="(f['password'].touched || submitted) && f['password'].errors" class="invalid-feedback">
-                    <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+                <div class="mb-3">
+                    <label class="form-label">User Name</label>
+                    <div class="mb-3__input">
+                        <input type="text" class="form-control" formControlName="userName"
+                            [ngClass]="{'is-invalid': submitted && f['userName'].errors}" placeholder="Account">
+                    </div>
+                    <div *ngIf="(f['userName'].touched|| submitted) && f['userName'].errors" class="invalid-feedback">
+                        <div *ngIf="f['userName'].errors?.['required']">User Name is required</div>
+                    </div>
                 </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form> 
-
-        <div id="googleButton" (click)="loginWithGoogle()"></div>
+    
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <div class="mb-3__input">
+                        <input type="text" class="form-control" formControlName="password"
+                            [ngClass]="{'is-invalid' : submitted && f['password'].errors}" #passwordInput placeholder="Password">
+                        <fa-icon [icon]="faEyeSlash"  #iconHide class="icon_hide" [ngClass]="{'hidden': !isIconHideVisible}" (click)="handleHide()"></fa-icon>
+                        <fa-icon [icon]="faEye"  #iconShow class="icon_show" [ngClass]="{'hidden': !isIconShowVisible}" (click)="handleShow()"></fa-icon>
+                    </div>                    
+                                        
+                    <div *ngIf="(f['password'].touched || submitted) && f['password'].errors" class="invalid-feedback">
+                        <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+                    </div>
+                </div>
+                <a routerLink="/forgot-password" class="login__form--forgot-password">Forgot password?</a>
+                <button type="submit" class="login__btn">Login</button>
+            </form> 
+            <!-- <div id="googleButton" (click)="loginWithGoogle()"></div> -->
+        </div>
     </div>
+    <app-footer></app-footer>
 </div>

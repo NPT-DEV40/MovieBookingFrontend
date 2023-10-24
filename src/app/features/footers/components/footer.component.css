@@ -18,8 +18,8 @@
 
 .footer__logo{
     margin-left: 10px;
-    height: 150px;
-    width: 150px;
+    height: var(--logo-size);
+    width: var(--logo-size);
     border-radius: 50%;
     margin-right: 30px;
 }

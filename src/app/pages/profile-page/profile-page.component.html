@@ -1,0 +1,48 @@
+<div class="profile">
+    <app-header></app-header>
+    <div class="container">
+        <div class="profile__content">
+            <div class="profile__content--top">
+                <h2 class="profile__content--title">Edit profile</h2>
+                <div class="avartar--wrapper">
+                    <img src="assets/images/sonvo.jpg" alt="" class="profile__content--avatar">
+                    <div class="icon__wrapper">
+                        <fa-icon [icon]="faPencil"  class="icon"></fa-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="profile__content--middle">
+                <div class="top">
+                    <div class="input__wrapper1">
+                        <label for="firstName" class="middle__label">First Name</label>
+                        <input type="text" class="middle__input1" value="Vo">
+                    </div>
+                    <div class="input__wrapper1">
+                        <label for="LastName" class="middle__label">Last Name</label>
+                        <input type="text" class="middle__input1" value="Son">
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="input__wrapper2">
+                        <label for="LastName" class="middle__label">Email</label>
+                        <input type="text" class="middle__input2" value="sonvo1611@gmail.com">
+                    </div>
+                    <div class="input__wrapper2">
+                        <label for="LastName" class="middle__label">Address</label>
+                        <input type="text" class="middle__input2" value="Thuan An, Binh Duong">
+                    </div>
+                    <div class="input__wrapper2">
+                        <label for="LastName" class="middle__label">Contact Number</label>
+                        <input type="text" class="middle__input2" value="0375xxxxxx">
+                    </div>
+                </div>
+            </div>
+            <div class="profile__content--bottom">
+                <button type="submit" class="profile__content--btn">Cancle</button>
+                <button type="submit" class="profile__content--btn">Save</button>
+            </div>
+        </div>
+        <app-button-support></app-button-support>
+    </div>
+    <app-footer></app-footer>
+</div>

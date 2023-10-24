@@ -1,13 +1,14 @@
 .button-wrapper{
     display: flex;
-    float: right;
     align-items: center;
     width: 100px;
     height: 100px;
     background-color: var(--primary-color-1);
     border-radius: 50%;
     border: none;
-    margin-bottom: 40px;
+    margin: auto 40px 20px auto;
+    cursor: pointer;
+    user-select: none;
 }
 
 .button-wrapper img{

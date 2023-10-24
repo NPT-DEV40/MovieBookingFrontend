@@ -2,7 +2,7 @@
   <div class="container">
       <div class="row">
           <div class="col-lg header__wrapper">
-              <label for="header__title" class="header__title">FILMTICKET</label>
+              <a routerLink="/home" class="header__title" onclick="goToHomePage()">FILMTICKET</a>
               <div class="header__search">
                   <div class="header__search-icon-wrapper"><fa-icon [icon]="faMagnifyingGlass" class="header__search-icon" [rotate]="90"></fa-icon></div>
                   <input type="text" class="header__search-input" placeholder="Find Movies / Cinemas">

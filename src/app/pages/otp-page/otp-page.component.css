@@ -1,0 +1,95 @@
+.otp{
+    display: flex;
+    flex-direction: column; 
+    background-color: var(--black); 
+    position: relative;
+    left: 0;
+    clear: both;
+}
+
+.otp__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 220px;
+    margin-top: calc(120px + (var(--logo-size)/2));
+}
+
+.otp__form{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto; 
+    border-radius: 30px;
+    border: 2px solid var(--primary-color-1);
+    background: transparent;
+}
+
+.otp__form--logo{
+    margin: auto auto var(--logo-margin-bottom) auto;
+    display: flex;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    object-fit: contain;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: none;
+}
+
+.mb-3{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 20px 40px;
+    text-align: center;
+    align-items: center;
+}
+
+.form-label{
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.mb-3__input{
+    display: flex;
+    position: relative;
+    width: 350px;
+    border-radius: 25px;
+    border: 1px solid var(--primary-color-1);
+    background: #FFF;
+    margin-top: 20px;
+}
+
+.form-control{
+    flex: 1;
+    border-radius: 25px;
+    border: none;
+    background: transparent;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    outline: none;
+}
+
+.invalid-feedback{
+}
+
+.otp__submit-btn{
+    display: flex;
+    margin: 0 20px 40px auto;
+    float: right;
+    border-radius: 25px;
+    border: none ;
+    background: var(--primary-color-1);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: normal;
+    padding: 10px 40px;
+}

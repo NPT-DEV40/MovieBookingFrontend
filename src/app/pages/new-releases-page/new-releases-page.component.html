@@ -1,30 +1,30 @@
-<div class="new-release__wrapper">
+<div class="new-release">
     <app-header></app-header>
     <app-slide size="small"></app-slide>
     <div class="container">
-        <div class="row">
-            <div class="col-lg new-release">
-                <div class="new-release__content">
-                    <app-buy-ticket></app-buy-ticket>
-                    <div class="list-film">
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                        <app-film size="big"></app-film>
-                    </div>
-                    <app-icon-down-custom></app-icon-down-custom>
-                </div>
+        <div class="new-release__content">
+            <app-buy-ticket></app-buy-ticket>
+            <div class="new-release__nav">
+                <a routerLink="/new-releases" class="new-releases__nav--new-releases">New releases</a>
+                <a routerLink="/upcoming" class="new-releases__nav--upcoming">Coming soon</a>
             </div>
+            <div class="list-film">
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+                <app-film size="big"></app-film>
+            </div>
+            <app-icon-down-custom></app-icon-down-custom>
         </div>
-    <app-button-support></app-button-support>
+        <app-button-support></app-button-support>
     </div>
     <app-footer></app-footer>
 </div>

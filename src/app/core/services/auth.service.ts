@@ -6,6 +6,8 @@ import { User } from 'src/app/features/users/interfaces/user';
 import { UserService } from 'src/app/features/users/services/user.service';
 import { environment } from 'src/environments/environment';
 import { registerRequest } from '../interfaces/registerRequest';
+import { otpRequest } from '../interfaces/otpRequest';
+import { resetPasswordRequest } from '../interfaces/resetPasswordRequest';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 const httpOptions = {
@@ -77,16 +79,29 @@ export class AuthService {
       }));
   }
 
-
   register(registerRequest: registerRequest): Observable<any> {
     return this.http.post(environment.api + 'auth/register',
       {
-        firstName: registerRequest.firstName,
-        lastName: registerRequest.lastName,
+        fullName: registerRequest.fullName,
         userName: registerRequest.userName,
         email: registerRequest.email,
         password: registerRequest.password,
         confirmPassword: registerRequest.confirmPassword
+      }, httpOptions);
+  }
+
+  otp(otpRequest: otpRequest): Observable<any> {
+    return this.http.post(environment.api + 'auth/otp',
+      {
+        otp: otpRequest.otp,
+      }, httpOptions);
+  }
+
+  resetPassword(resetPasswordRequest: resetPasswordRequest): Observable<any> {
+    return this.http.post(environment.api + 'auth/register',
+      {
+        password: resetPasswordRequest.password,
+        confirmPassword: resetPasswordRequest.confirmPassword
       }, httpOptions);
   }
 

@@ -10,6 +10,8 @@
   --green:#1ED900;
   --background-color: #000;
   --manage-color: #FF7A00;
+  --logo-size: 150px;
+  --logo-margin-bottom: calc(-1 * (var(--logo-size) / 2))
 }
 
 * {

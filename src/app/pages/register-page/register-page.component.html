@@ -1,58 +1,71 @@
-<div class="card">
-    <h4>Register</h4>
-    <div class="card-header">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <div class="mb-3">
-              <label class="form-label">First Name</label>
-              <input type="text" class="form-control" formControlName="firstName" [ngClass] = "{'is-invalid': submitted && f['firstName']?.errors}">
-              <div *ngIf="(f.firstName?.touched || submitted) && f.firstName?.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName?.errors?.['required']">First Name is required</div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Last Name</label>
-              <input type="text" class="form-control" formControlName="lastName" [ngClass] = "{'is-invalid': submitted && f['lastName']?.errors}">
-              <div *ngIf="(f.lastName?.touched || submitted) && f.lastName?.errors" class="invalid-feedback">
-                <div *ngIf="f.lastName?.errors?.['required']">Last Name is required</div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" formControlName="email" [ngClass] = "{'is-invalid': submitted && f['email']?.errors}">
-                <div *ngIf="(f.email?.touched || submitted) && f.email?.errors" class="invalid-feedback">
-                    <div *ngIf="f.email?.errors?.['required']">Email is required</div>
-                    <div *ngIf="f.email?.errors?.['email']">Wrong type</div>
+<div class="register">
+    <app-header></app-header>
+    <div class="register__container">
+        <div class="register__form">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <img src="assets/images/logo_white.png" alt="logo" class="register__form--logo">
+                <div class="form__nav">
+                    <a routerLink="/login" class="nav__sign-in">Sign in</a>
+                    <a routerLink="/register" class="nav__sign-up">Sign up</a>
                 </div>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">User Name</label>
-                <input type="text" class="form-control" formControlName="userName" [ngClass] = "{'is-invalid': submitted && f['userName']?.errors}">
-                <div *ngIf="(f.userName?.touched || submitted) && f.userName?.errors" class="invalid-feedback">
-                    <div *ngIf="f.userName?.errors?.['required']">User Name is required</div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <div class="mb-3__input">
+                        <input type="email" class="form-control" formControlName="email" [ngClass] = "{'is-invalid': submitted && f['email']?.errors}" placeholder="Email">
+                    </div>
+                    <div *ngIf="(f.email?.touched || submitted) && f.email?.errors" class="invalid-feedback">
+                        <div *ngIf="f.email?.errors?.['required']">Email is required</div>
+                        <div *ngIf="f.email?.errors?.['email']">Wrong type</div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" formControlName="password" [ngClass] = "{'is-invalid' : submitted && f['password']?.errors}">
-                <div *ngIf="(f.password?.touched || submitted) && f.password?.errors" class="invalid-feedback">
-                    <div *ngIf="f.password?.errors?.['required']">Password is required</div>
-                    <div *ngIf="f.password?.errors">Loi gi z</div>
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <div class="mb-3__input">
+                        <input type="text" class="form-control" formControlName="fullName" [ngClass] = "{'is-invalid': submitted && f['fullName']?.errors}" placeholder="Name">
+                    </div>
+                    <div *ngIf="(f.fullName?.touched || submitted) && f.fullName?.errors" class="invalid-feedback">
+                        <div *ngIf="f.fullName?.errors?.['required']">Full Name is required</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <label class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" formControlName="confirmPassword" [ngClass] = "{'is-invalid' : submitted && f['confirmPassword']?.errors}">
-                <div *ngIf="(f.confirmPassword?.touched || submitted) && f.confirmPassword?.errors" class="invalid-feedback">
-                    <div *ngIf="f.confirmPassword?.errors?.['required']">Confirm Password is required</div>
+                <div class="mb-3">
+                    <label class="form-label">User Name</label>
+                    <div class="mb-3__input">
+                        <input type="text" class="form-control" formControlName="userName" [ngClass] = "{'is-invalid': submitted && f['userName']?.errors}" placeholder="User name">
+                    </div>
+                    <div *ngIf="(f.userName?.touched || submitted) && f.userName?.errors" class="invalid-feedback">
+                        <div *ngIf="f.userName?.errors?.['required']">User Name is required</div>
+                    </div>
                 </div>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
+
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <div class="mb-3__input">
+                        <input type="password" class="form-control" formControlName="password" [ngClass] = "{'is-invalid' : submitted && f['password']?.errors}" placeholder="Password" #passwordInput>
+                        <fa-icon [icon]="faEyeSlash"  #iconHide class="icon_hide" [ngClass]="{'hidden': !isIconHideVisible}" (click)="handleHide()"></fa-icon>
+                        <fa-icon [icon]="faEye"  #iconShow class="icon_show" [ngClass]="{'hidden': !isIconShowVisible}" (click)="handleShow()"></fa-icon>
+                    </div>
+                    <div *ngIf="(f.password?.touched || submitted) && f.password?.errors" class="invalid-feedback">
+                        <div *ngIf="f.password?.errors?.['required']">Password is required</div>
+                        <div *ngIf="f.password?.errors">Loi gi z</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <div class="mb-3__input">
+                        <input type="password" class="form-control" formControlName="confirmPassword" [ngClass] = "{'is-invalid' : submitted && f['confirmPassword']?.errors}" placeholder="Confirm Password" #passwordInput>
+                        <fa-icon [icon]="faEyeSlash"  #iconHide class="icon_hide" [ngClass]="{'hidden': !isIconHideVisible}" (click)="handleHide()"></fa-icon>
+                        <fa-icon [icon]="faEye"  #iconShow class="icon_show" [ngClass]="{'hidden': !isIconShowVisible}" (click)="handleShow()"></fa-icon>
+                    </div>
+                    <div *ngIf="(f.confirmPassword?.touched || submitted) && f.confirmPassword?.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirmPassword?.errors?.['required']">Confirm Password is required</div>
+                    </div>
+                </div>
+                <button type="submit" class="register__btn">Register</button>
+            </form> 
+        </div>
     </div>
+    <app-footer></app-footer>
 </div>

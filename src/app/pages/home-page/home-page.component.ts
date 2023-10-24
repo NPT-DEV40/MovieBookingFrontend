@@ -8,20 +8,14 @@ import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
   faCircleChevronRight = faCircleChevronRight;
   movieList?: Movie[];
+  showChatBox: boolean = false;
 
   constructor(
     private auth: AuthService,
     private movieService: MovieService,
     ) { }
 
-  ngOnInit(): void {
-    // this.movieService.getAllMovies().subscribe((response: any) => {
-    //   this.movieList = response;
-    //   console.log(this.movieList);
-    // });
-    // console.log("test movie");
-  }
 }
